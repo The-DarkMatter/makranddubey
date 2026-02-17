@@ -95,6 +95,9 @@
     }
     </script>
     
+    <!-- Preload above-fold images -->
+    <link rel="preload" as="image" href="Author.png" fetchpriority="high">
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -155,6 +158,7 @@
                         src="Author.png" 
                         alt="पं. गोविन्द मकरन्द दुबे"
                         class="author-photo"
+                        fetchpriority="high"
                     >
                     <div class="portrait-decoration">
                         <span class="portrait-om">ॐ</span>
@@ -185,7 +189,8 @@
                         src="HindiGeeta/Cover.jpg" 
                         alt="श्रीमद्भगवद्गीता का हिन्दी छन्दों में अनुवाद - पुस्तक आवरण"
                         class="book-cover"
-                        loading="lazy"
+                        loading="eager"
+                        fetchpriority="low"
                     >
                     <div class="book-overlay">
                         <span class="overlay-text">और जानें</span>

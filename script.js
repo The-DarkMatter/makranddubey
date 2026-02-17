@@ -163,19 +163,41 @@ document.addEventListener('keydown', (e) => {
 });
 
 // ========================================
-// Performance: Lazy Loading Enhancement
+// Performance: Viewport-Aware Image Loading
 // ========================================
-if ('loading' in HTMLImageElement.prototype) {
-    const images = document.querySelectorAll('img[loading="lazy"]');
-    images.forEach(img => {
-        img.src = img.src;
-    });
-} else {
-    // Fallback for browsers that don't support lazy loading
-    const script = document.createElement('script');
-    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
-    document.body.appendChild(script);
-}
+// Use IntersectionObserver to preload images slightly before they enter the viewport
+(function() {
+    if ('IntersectionObserver' in window) {
+        const imgObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    // If image has a data-src, swap it in (for deferred images)
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                    }
+                    // Mark as eager once it's near viewport
+                    img.loading = 'eager';
+                    imgObserver.unobserve(img);
+                }
+            });
+        }, {
+            // Start loading 200px before the image enters the viewport
+            rootMargin: '200px 0px',
+            threshold: 0
+        });
+        
+        // Observe all lazy images
+        document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+            imgObserver.observe(img);
+        });
+    } else {
+        // Fallback for browsers that don't support IntersectionObserver
+        const images = document.querySelectorAll('img[loading="lazy"]');
+        images.forEach(img => { img.loading = 'eager'; });
+    }
+})();
 
 // ========================================
 // Analytics and User Engagement (Optional)
@@ -314,6 +336,17 @@ function setupCarousel() {
         
         // Remove old classes from ALL cards
         allCards.forEach(c => c.classList.remove('center', 'side', 'carousel-animate'));
+        
+        // Prioritize center card image, lazy load side cards
+        const centerImg = centerCard.querySelector('.book-cover');
+        const leftImg = leftCard.querySelector('.book-cover');
+        const rightImg = rightCard.querySelector('.book-cover');
+        if (centerImg) {
+            centerImg.loading = 'eager';
+            centerImg.removeAttribute('fetchpriority');
+        }
+        if (leftImg) leftImg.loading = 'lazy';
+        if (rightImg) rightImg.loading = 'lazy';
         
         // Assign classes
         leftCard.classList.add('side');
