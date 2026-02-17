@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="हिन्दी धार्मिक ग्रन्थ - पं. गोविन्द मकरन्द दुबे द्वारा अनुवादित गीता, भागवत और रामायण">
+    <title>हिन्दी धार्मिक ग्रन्थ | पं. गोविन्द मकरन्द दुबे</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Mukta:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>ॐ</text></svg>">
+</head>
+<body>
+    <!-- Sticky Header -->
+    <header class="site-header" role="banner">
+        <nav class="nav-container" role="navigation" aria-label="मुख्य नेविगेशन">
+            <div class="logo">
+                <span class="om-symbol">ॐ</span>
+                <span class="site-title">हिन्दी धार्मिक ग्रन्थ</span>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="मेनू खोलें" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">मुखपृष्ठ</a></li>
+                <li><a href="#books" class="nav-link">ग्रन्थ</a></li>
+                <li><a href="about.html" class="nav-link">अनुवादक</a></li>
+                <li><a href="contact.html" class="nav-link">सम्पर्क</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="decorative-pattern"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="om-large">ॐ</span>
+                    <span class="title-main">हिन्दी धार्मिक ग्रन्थ</span>
+                </h1>
+                <p class="hero-subtitle">प्राचीन संस्कृत ग्रन्थों का सरल हिन्दी अनुवाद</p>
+                <div class="translator-intro">
+                    <p class="translator-name">अनुवादक: <strong>पं. गोविन्द मकरन्द दुबे</strong></p>
+                    <p class="translator-desc">
+                        संस्कृत विद्वान् एवं हिन्दी काव्य के प्रकाण्ड पण्डित द्वारा 
+                        श्रीमद्भगवद्गीता, भागवत पुराण और रामायण का सरल हिन्दी छन्दों में 
+                        भावानुवाद, जो आम पाठकों के लिए सुलभ और सुबोध है।
+                    </p>
+                </div>
+                <a href="#books" class="cta-button">ग्रन्थ पढ़ें</a>
+            </div>
+            <div class="hero-image">
+                <div class="floating-om">ॐ</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Books Showcase Section -->
+    <section id="books" class="books-section">
+        <div class="section-header">
+            <h2 class="section-title">उपलब्ध ग्रन्थ</h2>
+            <p class="section-subtitle">मूल संस्कृत श्लोकों सहित हिन्दी अनुवाद</p>
+        </div>
+
+        <div class="books-grid">
+            <!-- Book 1: Hindi Geeta -->
+            <article class="book-card" data-book="geeta">
+                <div class="book-cover-container">
+                    <img 
+                        src="HindiGeeta/Cover.jpg" 
+                        alt="श्रीमद्भगवद्गीता का हिन्दी छन्दों में अनुवाद - पुस्तक आवरण"
+                        class="book-cover"
+                        loading="lazy"
+                    >
+                    <div class="book-overlay">
+                        <span class="overlay-text">और जानें</span>
+                    </div>
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">हिन्दी-गीता</h3>
+                    <p class="book-subtitle">श्रीमद्भगवद्गीता का हिन्दी छन्दों में अनुवाद</p>
+                    <p class="book-details">मूल संस्कृत श्लोकों सहित</p>
+                    <div class="book-meta">
+                        <span class="meta-item">📖 18 अध्याय</span>
+                        <span class="meta-item">✨ 700 श्लोक</span>
+                    </div>
+                    <div class="book-actions">
+                        <a href="geeta.html" class="btn btn-primary" aria-label="हिन्दी-गीता ऑनलाइन पढ़ें">
+                            <span>📖</span> ऑनलाइन पढ़ें
+                        </a>
+                        <a href="HindiGeeta/book.pdf" class="btn btn-secondary" download aria-label="हिन्दी-गीता PDF डाउनलोड करें">
+                            <span>⬇</span> PDF डाउनलोड करें
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Book 2: Hindi Bhagwat -->
+            <article class="book-card" data-book="bhagwat">
+                <div class="book-cover-container">
+                    <img 
+                        src="HindiBhagwat/Cover.jpg" 
+                        alt="श्रीमद्भागवत पुराण का हिन्दी अनुवाद - पुस्तक आवरण"
+                        class="book-cover"
+                        loading="lazy"
+                    >
+                    <div class="book-overlay">
+                        <span class="overlay-text">और जानें</span>
+                    </div>
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">हिन्दी भागवत</h3>
+                    <p class="book-subtitle">श्रीमद्भागवत पुराण का हिन्दी अनुवाद</p>
+                    <p class="book-details">मूल संस्कृत श्लोकों सहित</p>
+                    <div class="book-meta">
+                        <span class="meta-item">📖 12 स्कन्ध</span>
+                        <span class="meta-item">✨ 18,000 श्लोक</span>
+                    </div>
+                    <div class="book-actions">
+                        <a href="bhagwat.html" class="btn btn-primary" aria-label="हिन्दी भागवत ऑनलाइन पढ़ें">
+                            <span>📖</span> ऑनलाइन पढ़ें
+                        </a>
+                        <a href="HindiBhagwat/book.pdf" class="btn btn-secondary" download aria-label="हिन्दी भागवत PDF डाउनलोड करें">
+                            <span>⬇</span> PDF डाउनलोड करें
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Book 3: Hindi Ramayana -->
+            <article class="book-card" data-book="ramayana">
+                <div class="book-cover-container">
+                    <img 
+                        src="HindiRamayana/Cover.jpg" 
+                        alt="श्रीरामायण का हिन्दी अनुवाद - पुस्तक आवरण"
+                        class="book-cover"
+                        loading="lazy"
+                    >
+                    <div class="book-overlay">
+                        <span class="overlay-text">और जानें</span>
+                    </div>
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">हिन्दी रामायण</h3>
+                    <p class="book-subtitle">श्रीरामायण का हिन्दी छन्दों में अनुवाद</p>
+                    <p class="book-details">वाल्मीकि रामायण पर आधारित</p>
+                    <div class="book-meta">
+                        <span class="meta-item">📖 7 काण्ड</span>
+                        <span class="meta-item">✨ 24,000 श्लोक</span>
+                    </div>
+                    <div class="book-actions">
+                        <a href="ramayana.html" class="btn btn-primary" aria-label="हिन्दी रामायण ऑनलाइन पढ़ें">
+                            <span>📖</span> ऑनलाइन पढ़ें
+                        </a>
+                        <a href="HindiRamayana/book.pdf" class="btn btn-secondary" download aria-label="हिन्दी रामायण PDF डाउनलोड करें">
+                            <span>⬇</span> PDF डाउनलोड करें
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Book 4: Coming Soon -->
+            <article class="book-card book-card-upcoming" data-book="upcoming">
+                <div class="book-cover-container">
+                    <div class="coming-soon-cover">
+                        <div class="coming-soon-content">
+                            <span class="om-symbol-large">ॐ</span>
+                            <span class="coming-soon-badge">शीघ्र आगमन</span>
+                            <p class="coming-soon-text">नया ग्रन्थ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">आगामी प्रकाशन</h3>
+                    <p class="book-subtitle">नवीनतम अनुवाद कार्य प्रगति पर है</p>
+                    <p class="book-details">प्रकाशन शीघ्र</p>
+                    <div class="book-meta">
+                        <span class="meta-item">🔔 सूचना पाएं</span>
+                        <span class="meta-item">⏳ प्रतीक्षारत</span>
+                    </div>
+                    <div class="book-actions">
+                        <button class="btn btn-primary" disabled aria-label="शीघ्र उपलब्ध">
+                            <span>📖</span> शीघ्र उपलब्ध
+                        </button>
+                        <button class="btn btn-secondary" disabled aria-label="डाउनलोड शीघ्र">
+                            <span>⬇</span> डाउनलोड शीघ्र
+                        </button>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- About Preview Section -->
+    <section class="about-preview">
+        <div class="about-content">
+            <h2 class="section-title">अनुवादक के बारे में</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>पं. गोविन्द मकरन्द दुबे</h3>
+                    <p>
+                        संस्कृत और हिन्दी के प्रकाण्ड विद्वान् पं. गोविन्द मकरन्द दुबे जी ने 
+                        अपना सम्पूर्ण जीवन धार्मिक ग्रन्थों के अध्ययन और उन्हें सरल हिन्दी में 
+                        प्रस्तुत करने में समर्पित किया। उनका उद्देश्य संस्कृत के गूढ़ ज्ञान को 
+                        आम जनमानस तक पहुँचाना रहा है।
+                    </p>
+                    <p>
+                        उनके अनुवाद में मूल श्लोकों का भाव और संदेश अक्षुण्ण रहता है, साथ ही 
+                        हिन्दी छन्दों की मधुरता भी पाठकों को आकर्षित करती है।
+                    </p>
+                    <a href="about.html" class="btn btn-primary">और जानें</a>
+                </div>
+                <div class="about-quote">
+                    <blockquote>
+                        <p class="quote-text">
+                            "धर्मग्रन्थों का सच्चा उद्देश्य मानव जीवन को उन्नत बनाना है। 
+                            यह तभी सम्भव है जब ये ग्रन्थ सरल भाषा में सभी को उपलब्ध हों।"
+                        </p>
+                        <footer class="quote-author">— पं. गोविन्द मकरन्द दुबे</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>ग्रन्थ</h4>
+                <ul>
+                    <li><a href="geeta.html">हिन्दी-गीता</a></li>
+                    <li><a href="bhagwat.html">हिन्दी भागवत</a></li>
+                    <li><a href="ramayana.html">हिन्दी रामायण</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>सम्पर्क</h4>
+                <ul>
+                    <li><a href="about.html">अनुवादक के बारे में</a></li>
+                    <li><a href="contact.html">फीडबैक</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>प्रकाशक</h4>
+                <p class="publisher-info">
+                    <strong>पाथेय प्रकाशन</strong><br>
+                    जबलपुर, मध्य प्रदेश
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">
+                &copy; 2026 पं. गोविन्द मकरन्द दुबे | सर्वाधिकार सुरक्षित
+            </p>
+            <p class="dedication">
+                <span class="om-small">ॐ</span> सनातन धर्म की सेवा में <span class="om-small">ॐ</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

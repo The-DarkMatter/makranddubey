@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="श्रीमद्भगवद्गीता का हिन्दी छन्दों में अनुवाद - पं. गोविन्द मकरन्द दुबे">
+    <title>हिन्दी-गीता | श्रीमद्भगवद्गीता</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Mukta:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="reader.css">
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>ॐ</text></svg>">
+</head>
+<body class="reader-page">
+    <!-- Sticky Header -->
+    <header class="site-header">
+        <nav class="nav-container">
+            <div class="logo">
+                <span class="om-symbol">ॐ</span>
+                <span class="site-title">हिन्दी-गीता</span>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="मेनू खोलें" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">मुखपृष्ठ</a></li>
+                <li><a href="index.html#books" class="nav-link">ग्रन्थ</a></li>
+                <li><a href="about.html" class="nav-link">अनुवादक</a></li>
+                <li><a href="contact.html" class="nav-link">सम्पर्क</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Book Header Section -->
+    <section class="book-header">
+        <div class="book-header-content">
+            <div class="book-cover-display">
+                <img src="HindiGeeta/Cover.jpg" alt="हिन्दी-गीता पुस्तक आवरण" class="book-cover-large">
+            </div>
+            <div class="book-details-display">
+                <h1 class="book-main-title">श्रीमद्भगवद्गीता</h1>
+                <h2 class="book-sub-title">हिन्दी छन्दों में अनुवाद</h2>
+                <p class="book-description">
+                    मूल संस्कृत श्लोकों के साथ सरल हिन्दी अनुवाद। महाभारत के भीष्म पर्व में 
+                    वर्णित भगवान् श्रीकृष्ण और अर्जुन के मध्य हुए पावन संवाद का काव्यात्मक रूपान्तरण।
+                </p>
+                <div class="book-meta-large">
+                    <span class="meta-badge">📖 18 अध्याय</span>
+                    <span class="meta-badge">✨ 700 श्लोक</span>
+                    <span class="meta-badge">🙏 मूल संस्कृत सहित</span>
+                </div>
+                <div class="translator-credit">
+                    <p><strong>अनुवादक:</strong> पं. गोविन्द मकरन्द दुबे</p>
+                    <p><strong>प्रकाशक:</strong> पाथेय प्रकाशन, जबलपुर म.प्र.</p>
+                </div>
+                <div class="book-actions-large">
+                    <a href="HindiGeeta/book.pdf" class="btn btn-primary" download>
+                        <span>⬇</span> पूर्ण पुस्तक PDF डाउनलोड करें
+                    </a>
+                    <button class="btn btn-secondary" onclick="window.print()">
+                        <span>🖨️</span> प्रिंट करें
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reading Controls -->
+    <section class="reading-controls">
+        <div class="controls-container">
+            <div class="font-controls">
+                <label for="font-size">फ़ॉन्ट आकार:</label>
+                <button class="control-btn" id="decrease-font" aria-label="फ़ॉन्ट छोटा करें">A-</button>
+                <span id="font-size-display">100%</span>
+                <button class="control-btn" id="increase-font" aria-label="फ़ॉन्ट बड़ा करें">A+</button>
+            </div>
+            <div class="view-controls">
+                <button class="control-btn active" id="dual-view" aria-label="दो-स्तम्भ दृश्य">
+                    <span>📖</span> संस्कृत-हिन्दी
+                </button>
+                <button class="control-btn" id="hindi-only" aria-label="केवल हिन्दी दृश्य">
+                    <span>📝</span> केवल हिन्दी
+                </button>
+            </div>
+            <div class="bookmark-control">
+                <button class="control-btn" id="bookmark-btn" aria-label="पृष्ठ बुकमार्क करें">
+                    <span>🔖</span> बुकमार्क
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chapter Navigation -->
+    <section class="chapter-navigation">
+        <div class="nav-container">
+            <h3 class="chapter-nav-title">अध्याय चुनें</h3>
+            <div class="chapter-grid">
+                <a href="#chapter-1" class="chapter-link active" data-chapter="1">
+                    <span class="chapter-number">1</span>
+                    <span class="chapter-name">अर्जुनविषादयोग</span>
+                </a>
+                <a href="#chapter-2" class="chapter-link" data-chapter="2">
+                    <span class="chapter-number">2</span>
+                    <span class="chapter-name">सांख्ययोग</span>
+                </a>
+                <a href="#chapter-3" class="chapter-link" data-chapter="3">
+                    <span class="chapter-number">3</span>
+                    <span class="chapter-name">कर्मयोग</span>
+                </a>
+                <a href="#chapter-4" class="chapter-link" data-chapter="4">
+                    <span class="chapter-number">4</span>
+                    <span class="chapter-name">ज्ञानकर्मसन्न्यासयोग</span>
+                </a>
+                <a href="#chapter-5" class="chapter-link" data-chapter="5">
+                    <span class="chapter-number">5</span>
+                    <span class="chapter-name">कर्मसन्न्यासयोग</span>
+                </a>
+                <a href="#chapter-6" class="chapter-link" data-chapter="6">
+                    <span class="chapter-number">6</span>
+                    <span class="chapter-name">आत्मसंयमयोग</span>
+                </a>
+                <a href="#chapter-7" class="chapter-link" data-chapter="7">
+                    <span class="chapter-number">7</span>
+                    <span class="chapter-name">ज्ञानविज्ञानयोग</span>
+                </a>
+                <a href="#chapter-8" class="chapter-link" data-chapter="8">
+                    <span class="chapter-number">8</span>
+                    <span class="chapter-name">अक्षरब्रह्मयोग</span>
+                </a>
+                <a href="#chapter-9" class="chapter-link" data-chapter="9">
+                    <span class="chapter-number">9</span>
+                    <span class="chapter-name">राजविद्याराजगुह्ययोग</span>
+                </a>
+                <a href="#chapter-10" class="chapter-link" data-chapter="10">
+                    <span class="chapter-number">10</span>
+                    <span class="chapter-name">विभूतियोग</span>
+                </a>
+                <a href="#chapter-11" class="chapter-link" data-chapter="11">
+                    <span class="chapter-number">11</span>
+                    <span class="chapter-name">विश्वरूपदर्शनयोग</span>
+                </a>
+                <a href="#chapter-12" class="chapter-link" data-chapter="12">
+                    <span class="chapter-number">12</span>
+                    <span class="chapter-name">भक्तियोग</span>
+                </a>
+                <a href="#chapter-13" class="chapter-link" data-chapter="13">
+                    <span class="chapter-number">13</span>
+                    <span class="chapter-name">क्षेत्रक्षेत्रज्ञविभागयोग</span>
+                </a>
+                <a href="#chapter-14" class="chapter-link" data-chapter="14">
+                    <span class="chapter-number">14</span>
+                    <span class="chapter-name">गुणत्रयविभागयोग</span>
+                </a>
+                <a href="#chapter-15" class="chapter-link" data-chapter="15">
+                    <span class="chapter-number">15</span>
+                    <span class="chapter-name">पुरुषोत्तमयोग</span>
+                </a>
+                <a href="#chapter-16" class="chapter-link" data-chapter="16">
+                    <span class="chapter-number">16</span>
+                    <span class="chapter-name">दैवासुरसम्पद्विभागयोग</span>
+                </a>
+                <a href="#chapter-17" class="chapter-link" data-chapter="17">
+                    <span class="chapter-number">17</span>
+                    <span class="chapter-name">श्रद्धात्रयविभागयोग</span>
+                </a>
+                <a href="#chapter-18" class="chapter-link" data-chapter="18">
+                    <span class="chapter-number">18</span>
+                    <span class="chapter-name">मोक्षसन्न्यासयोग</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reading Content -->
+    <section class="reading-content" id="reading-area">
+        <div class="content-container">
+            <div class="pdf-viewer-message">
+                <div class="message-content">
+                    <span class="om-large">ॐ</span>
+                    <h2>पूर्ण ग्रन्थ पढ़ने के लिए</h2>
+                    <p>कृपया PDF डाउनलोड करें या नीचे दिए गए बटन से पुस्तक खोलें</p>
+                    <div class="message-actions">
+                        <a href="HindiGeeta/book.pdf" class="btn btn-primary" target="_blank">
+                            <span>📖</span> PDF में पढ़ें
+                        </a>
+                        <a href="HindiGeeta/book.pdf" class="btn btn-secondary" download>
+                            <span>⬇</span> डाउनलोड करें
+                        </a>
+                    </div>
+                    <div class="sample-preview">
+                        <h3>नमूना - प्रथम अध्याय (अर्जुनविषादयोग)</h3>
+                        <div class="verse-container dual-column">
+                            <div class="sanskrit-text">
+                                <p class="verse-number">श्लोक 1</p>
+                                <p class="verse-sanskrit">
+                                    धृतराष्ट्र उवाच।<br>
+                                    धर्मक्षेत्रे कुरुक्षेत्रे समवेता युयुत्सवः।<br>
+                                    मामकाः पाण्डवाश्चैव किमकुर्वत सञ्जय।।1।।
+                                </p>
+                            </div>
+                            <div class="hindi-text">
+                                <p class="verse-number">हिन्दी अनुवाद</p>
+                                <p class="verse-hindi">
+                                    धृतराष्ट्र ने कहा—<br>
+                                    हे संजय! धर्मभूमि कुरुक्षेत्र में एकत्रित,<br>
+                                    युद्ध के इच्छुक मेरे और पाण्डु के पुत्रों ने,<br>
+                                    क्या किया? मुझे बताओ विस्तार से।
+                                </p>
+                            </div>
+                        </div>
+                        <p class="sample-note">
+                            * यह केवल एक नमूना है। सम्पूर्ण ग्रन्थ पढ़ने के लिए कृपया PDF डाउनलोड करें।
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>ग्रन्थ</h4>
+                <ul>
+                    <li><a href="geeta.html">हिन्दी-गीता</a></li>
+                    <li><a href="bhagwat.html">हिन्दी भागवत</a></li>
+                    <li><a href="ramayana.html">हिन्दी रामायण</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>सम्पर्क</h4>
+                <ul>
+                    <li><a href="about.html">अनुवादक के बारे में</a></li>
+                    <li><a href="contact.html">फीडबैक</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>प्रकाशक</h4>
+                <p class="publisher-info">
+                    <strong>पाथेय प्रकाशन</strong><br>
+                    जबलपुर, मध्य प्रदेश
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">
+                &copy; 2026 पं. गोविन्द मकरन्द दुबे | सर्वाधिकार सुरक्षित
+            </p>
+            <p class="dedication">
+                <span class="om-small">ॐ</span> सनातन धर्म की सेवा में <span class="om-small">ॐ</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="reader.js"></script>
+</body>
+</html>

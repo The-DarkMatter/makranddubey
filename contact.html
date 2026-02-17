@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="सम्पर्क एवं फीडबैक - हिन्दी धार्मिक ग्रन्थ">
+    <title>सम्पर्क | हिन्दी धार्मिक ग्रन्थ</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Mukta:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>ॐ</text></svg>">
+</head>
+<body>
+    <!-- Sticky Header -->
+    <header class="site-header">
+        <nav class="nav-container">
+            <div class="logo">
+                <span class="om-symbol">ॐ</span>
+                <span class="site-title">हिन्दी धार्मिक ग्रन्थ</span>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="मेनू खोलें" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">मुखपृष्ठ</a></li>
+                <li><a href="index.html#books" class="nav-link">ग्रन्थ</a></li>
+                <li><a href="about.html" class="nav-link">अनुवादक</a></li>
+                <li><a href="contact.html" class="nav-link active">सम्पर्क</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+        <div class="contact-hero-content">
+            <span class="om-large">ॐ</span>
+            <h1 class="page-title">सम्पर्क एवं फीडबैक</h1>
+            <p class="page-subtitle">आपके विचार और सुझाव हमारे लिए महत्वपूर्ण हैं</p>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="contact-content-section">
+        <div class="contact-wrapper">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h2 class="form-title">फीडबैक भेजें</h2>
+                    <p class="form-description">
+                        यदि आपके पास कोई प्रश्न, सुझाव या फीडबैक है, तो कृपया नीचे दिए गए फॉर्म को भरें।
+                    </p>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name" class="form-label">नाम <span class="required">*</span></label>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                name="name" 
+                                class="form-input" 
+                                required
+                                placeholder="आपका नाम"
+                                aria-required="true"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">ईमेल <span class="required">*</span></label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                class="form-input" 
+                                required
+                                placeholder="your.email@example.com"
+                                aria-required="true"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject" class="form-label">विषय <span class="required">*</span></label>
+                            <select id="subject" name="subject" class="form-input" required aria-required="true">
+                                <option value="">कृपया चुनें</option>
+                                <option value="feedback">सामान्य फीडबैक</option>
+                                <option value="error">पुस्तक में त्रुटि</option>
+                                <option value="suggestion">सुझाव</option>
+                                <option value="question">प्रश्न</option>
+                                <option value="other">अन्य</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="book" class="form-label">किस ग्रन्थ के बारे में?</label>
+                            <select id="book" name="book" class="form-input">
+                                <option value="">लागू नहीं / सामान्य</option>
+                                <option value="geeta">हिन्दी-गीता</option>
+                                <option value="bhagwat">हिन्दी भागवत</option>
+                                <option value="ramayana">हिन्दी रामायण</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">संदेश <span class="required">*</span></label>
+                            <textarea 
+                                id="message" 
+                                name="message" 
+                                class="form-input form-textarea" 
+                                rows="6" 
+                                required
+                                placeholder="अपना संदेश यहाँ लिखें..."
+                                aria-required="true"
+                            ></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <span>📨</span> संदेश भेजें
+                        </button>
+                        
+                        <p class="form-note">
+                            * आवश्यक फील्ड हैं। हम शीघ्र ही आपसे सम्पर्क करेंगे।
+                        </p>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="contact-info-container">
+                    <h2 class="info-title">प्रकाशक जानकारी</h2>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <span class="om-symbol">ॐ</span>
+                        </div>
+                        <div class="info-content">
+                            <h3>पाथेय प्रकाशन</h3>
+                            <p class="info-text">
+                                जबलपुर, मध्य प्रदेश<br>
+                                भारत
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h3 class="info-section-title">डिजिटल संसाधन</h3>
+                        <div class="resource-list">
+                            <a href="index.html#books" class="resource-link">
+                                <span>📚</span>
+                                <div>
+                                    <strong>ऑनलाइन पुस्तकालय</strong>
+                                    <p>सभी ग्रन्थों को ऑनलाइन पढ़ें</p>
+                                </div>
+                            </a>
+                            <a href="index.html#books" class="resource-link">
+                                <span>⬇️</span>
+                                <div>
+                                    <strong>PDF डाउनलोड</strong>
+                                    <p>निःशुल्क पुस्तकें डाउनलोड करें</p>
+                                </div>
+                            </a>
+                            <a href="about.html" class="resource-link">
+                                <span>ℹ️</span>
+                                <div>
+                                    <strong>अनुवादक परिचय</strong>
+                                    <p>पं. गोविन्द मकरन्द दुबे के बारे में</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h3 class="info-section-title">सामान्य प्रश्न</h3>
+                        <div class="faq-list">
+                            <div class="faq-item">
+                                <strong>क्या पुस्तकें निःशुल्क हैं?</strong>
+                                <p>हाँ, सभी PDF निःशुल्क डाउनलोड के लिए उपलब्ध हैं।</p>
+                            </div>
+                            <div class="faq-item">
+                                <strong>क्या मैं पुस्तकों को साझा कर सकता हूँ?</strong>
+                                <p>हाँ, कृपया इन्हें अधिक से अधिक लोगों के साथ साझा करें।</p>
+                            </div>
+                            <div class="faq-item">
+                                <strong>क्या प्रिंट संस्करण उपलब्ध हैं?</strong>
+                                <p>हाँ, प्रिंट संस्करण के लिए पाथेय प्रकाशन से सम्पर्क करें।</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="devotional-message">
+                        <span class="om-large">ॐ</span>
+                        <p class="devotional-text">
+                            "ज्ञान की ज्योति सबको मिले, यही हमारी कामना है।<br>
+                            धर्मग्रन्थों का सार जन-जन तक पहुँचे, यही हमारा प्रयास है।"
+                        </p>
+                        <p class="devotional-author">— पाथेय प्रकाशन</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>ग्रन्थ</h4>
+                <ul>
+                    <li><a href="geeta.html">हिन्दी-गीता</a></li>
+                    <li><a href="bhagwat.html">हिन्दी भागवत</a></li>
+                    <li><a href="ramayana.html">हिन्दी रामायण</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>सम्पर्क</h4>
+                <ul>
+                    <li><a href="about.html">अनुवादक के बारे में</a></li>
+                    <li><a href="contact.html">फीडबैक</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>प्रकाशक</h4>
+                <p class="publisher-info">
+                    <strong>पाथेय प्रकाशन</strong><br>
+                    जबलपुर, मध्य प्रदेश
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">
+                &copy; 2026 पं. गोविन्द मकरन्द दुबे | सर्वाधिकार सुरक्षित
+            </p>
+            <p class="dedication">
+                <span class="om-small">ॐ</span> सनातन धर्म की सेवा में <span class="om-small">ॐ</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+    <script>
+        // Contact Form Handling
+        const contactForm = document.getElementById('contactForm');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    subject: document.getElementById('subject').value,
+                    book: document.getElementById('book').value,
+                    message: document.getElementById('message').value,
+                    timestamp: new Date().toISOString()
+                };
+                
+                // In a real implementation, you would send this to a backend
+                console.log('Form submitted:', formData);
+                
+                // Show success message
+                showSuccessMessage();
+                
+                // Reset form
+                contactForm.reset();
+            });
+        }
+        
+        function showSuccessMessage() {
+            const successDiv = document.createElement('div');
+            successDiv.className = 'success-message';
+            successDiv.innerHTML = `
+                <div class="success-content">
+                    <span class="success-icon">✅</span>
+                    <h3>धन्यवाद!</h3>
+                    <p>आपका संदेश सफलतापूर्वक प्राप्त हुआ। हम शीघ्र ही आपसे सम्पर्क करेंगे।</p>
+                    <button class="btn btn-primary" onclick="this.parentElement.parentElement.remove()">बंद करें</button>
+                </div>
+            `;
+            successDiv.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.7);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+                animation: fadeIn 0.3s ease;
+            `;
+            
+            document.body.appendChild(successDiv);
+        }
+        
+        // Add fade in animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+            
+            .success-content {
+                background: white;
+                padding: 3rem;
+                border-radius: 1rem;
+                text-align: center;
+                max-width: 500px;
+                animation: slideUp 0.3s ease;
+            }
+            
+            @keyframes slideUp {
+                from {
+                    transform: translateY(50px);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+            
+            .success-icon {
+                font-size: 4rem;
+                display: block;
+                margin-bottom: 1rem;
+            }
+            
+            .success-content h3 {
+                font-family: var(--font-hindi);
+                color: var(--color-deep-red);
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+            
+            .success-content p {
+                margin-bottom: 2rem;
+                line-height: 1.8;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+    
+    <style>
+        /* Contact Page Specific Styles */
+        .contact-hero {
+            background: linear-gradient(135deg, var(--color-saffron) 0%, var(--color-deep-red) 100%);
+            padding: var(--spacing-2xl) var(--spacing-md);
+            text-align: center;
+            color: var(--color-white);
+        }
+        
+        .contact-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .page-title {
+            font-family: var(--font-hindi);
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .page-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.95;
+        }
+        
+        .contact-content-section {
+            padding: var(--spacing-2xl) var(--spacing-md);
+            background: var(--color-soft-yellow);
+        }
+        
+        .contact-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: var(--spacing-xl);
+        }
+        
+        .contact-form-container, .contact-info-container {
+            background: var(--color-white);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .form-title, .info-title {
+            font-family: var(--font-hindi);
+            font-size: 2rem;
+            color: var(--color-deep-red);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .form-description {
+            margin-bottom: var(--spacing-lg);
+            line-height: 1.8;
+        }
+        
+        .form-group {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+            color: var(--color-dark-brown);
+        }
+        
+        .required {
+            color: var(--color-deep-red);
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: var(--spacing-sm);
+            border: 2px solid rgba(255, 153, 51, 0.3);
+            border-radius: var(--radius-md);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color var(--transition-fast);
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--color-saffron);
+            box-shadow: 0 0 0 3px rgba(255, 153, 51, 0.1);
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .btn-submit {
+            width: 100%;
+            padding: var(--spacing-md);
+            font-size: 1.1rem;
+        }
+        
+        .form-note {
+            margin-top: var(--spacing-md);
+            font-size: 0.9rem;
+            color: rgba(74, 44, 42, 0.7);
+            font-style: italic;
+        }
+        
+        .info-card {
+            background: var(--color-soft-yellow);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-lg);
+            display: flex;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .info-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-warm);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .info-icon .om-symbol {
+            font-size: 2rem;
+            color: var(--color-white);
+        }
+        
+        .info-content h3 {
+            font-size: 1.5rem;
+            color: var(--color-deep-red);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .info-text {
+            line-height: 1.8;
+        }
+        
+        .info-section {
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .info-section-title {
+            font-family: var(--font-hindi);
+            font-size: 1.3rem;
+            color: var(--color-deep-red);
+            margin-bottom: var(--spacing-sm);
+            padding-bottom: var(--spacing-xs);
+            border-bottom: 2px solid var(--color-gold);
+        }
+        
+        .resource-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+        
+        .resource-link {
+            display: flex;
+            align-items: start;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-sm);
+            background: var(--color-soft-yellow);
+            border-radius: var(--radius-md);
+            transition: all var(--transition-fast);
+        }
+        
+        .resource-link:hover {
+            transform: translateX(4px);
+            background: var(--color-saffron);
+            color: var(--color-white);
+        }
+        
+        .resource-link span {
+            font-size: 1.5rem;
+        }
+        
+        .resource-link strong {
+            display: block;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .resource-link p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+        
+        .faq-item {
+            padding: var(--spacing-sm);
+            background: var(--color-soft-yellow);
+            border-radius: var(--radius-md);
+            border-left: 3px solid var(--color-saffron);
+        }
+        
+        .faq-item strong {
+            display: block;
+            color: var(--color-deep-red);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .faq-item p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .devotional-message {
+            background: linear-gradient(135deg, var(--color-soft-yellow) 0%, var(--color-white) 100%);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            margin-top: var(--spacing-lg);
+        }
+        
+        .devotional-text {
+            font-family: var(--font-hindi);
+            font-size: 1.1rem;
+            line-height: 2;
+            font-style: italic;
+            margin: var(--spacing-md) 0;
+        }
+        
+        .devotional-author {
+            font-weight: 600;
+            color: var(--color-deep-red);
+        }
+        
+        @media (max-width: 968px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</body>
+</html>
