@@ -130,31 +130,6 @@ bookCards.forEach(card => {
 });
 
 // ========================================
-// Intersection Observer for Fade-in Animations
-// ========================================
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Observe book cards for staggered fade-in
-bookCards.forEach((card, index) => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
-    observer.observe(card);
-});
-
-// ========================================
 // Loading State for PDFs
 // ========================================
 const pdfLinks = document.querySelectorAll('a[href$=".pdf"]');
@@ -236,5 +211,199 @@ function setupPrintButton() {
 }
 
 setupPrintButton();
+
+// ========================================
+// Featured Verse
+// ========================================
+function setupFeaturedVerse() {
+    const sanskritEl = document.getElementById('verse-sanskrit');
+    const hindiEl = document.getElementById('verse-hindi');
+    const sourceEl = document.getElementById('verse-source');
+    const refreshBtn = document.getElementById('verse-refresh');
+    
+    if (!sanskritEl || !hindiEl || !sourceEl) return;
+    if (typeof FEATURED_VERSES === 'undefined' || !FEATURED_VERSES.length) return;
+    
+    let lastIndex = -1;
+    
+    function showVerse(index) {
+        const verse = FEATURED_VERSES[index];
+        sanskritEl.textContent = verse.sanskrit;
+        hindiEl.textContent = verse.hindi;
+        sourceEl.textContent = '— ' + verse.source;
+        lastIndex = index;
+    }
+    
+    function showRandomVerse() {
+        let index;
+        do {
+            index = Math.floor(Math.random() * FEATURED_VERSES.length);
+        } while (index === lastIndex && FEATURED_VERSES.length > 1);
+        showVerse(index);
+    }
+    
+    // Show a verse based on the day (so same verse throughout the day)
+    const dayIndex = Math.floor(Date.now() / (1000 * 60 * 60 * 24)) % FEATURED_VERSES.length;
+    showVerse(dayIndex);
+    
+    if (refreshBtn) {
+        refreshBtn.addEventListener('click', showRandomVerse);
+    }
+}
+
+setupFeaturedVerse();
+
+// ========================================
+// Scroll Reveal Animations
+// ========================================
+function setupScrollReveal() {
+    const revealElements = document.querySelectorAll('.scroll-reveal');
+    if (!revealElements.length) return;
+    
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                // Stagger the reveal slightly
+                setTimeout(() => {
+                    entry.target.classList.add('revealed');
+                }, index * 100);
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -40px 0px'
+    });
+    
+    revealElements.forEach(el => revealObserver.observe(el));
+}
+
+setupScrollReveal();
+
+// ========================================
+// Books Carousel - Coverflow with DOM reorder
+// ========================================
+function setupCarousel() {
+    const carousel = document.querySelector('.books-carousel');
+    const prevBtn = document.querySelector('.carousel-prev');
+    const nextBtn = document.querySelector('.carousel-next');
+    const indicators = document.querySelectorAll('.indicator');
+    
+    if (!carousel) return;
+    
+    // Store original order: [geeta=0, bhagwat=1, ramayana=2]
+    const allCards = Array.from(carousel.querySelectorAll('.book-card'));
+    if (allCards.length < 3) return;
+    
+    let currentCenter = 0; // index of center card in allCards
+    
+    function render() {
+        const total = allCards.length;
+        const leftIdx = (currentCenter - 1 + total) % total;
+        const rightIdx = (currentCenter + 1) % total;
+        
+        // Clear carousel
+        while (carousel.firstChild) {
+            carousel.removeChild(carousel.firstChild);
+        }
+        
+        // Get the cards
+        const leftCard = allCards[leftIdx];
+        const centerCard = allCards[currentCenter];
+        const rightCard = allCards[rightIdx];
+        
+        // Remove old classes from ALL cards
+        allCards.forEach(c => c.classList.remove('center', 'side', 'carousel-animate'));
+        
+        // Assign classes
+        leftCard.classList.add('side');
+        centerCard.classList.add('center');
+        rightCard.classList.add('side');
+        
+        // Append in visual order: left, center, right
+        carousel.appendChild(leftCard);
+        carousel.appendChild(centerCard);
+        carousel.appendChild(rightCard);
+        
+        // Trigger fade-in animation on center card
+        requestAnimationFrame(() => {
+            centerCard.classList.add('carousel-animate');
+        });
+        
+        // Update indicators
+        indicators.forEach((ind, i) => {
+            ind.classList.toggle('active', i === currentCenter);
+        });
+    }
+    
+    function goNext() {
+        currentCenter = (currentCenter + 1) % allCards.length;
+        render();
+    }
+    
+    function goPrev() {
+        currentCenter = (currentCenter - 1 + allCards.length) % allCards.length;
+        render();
+    }
+    
+    // Button handlers
+    if (nextBtn) nextBtn.addEventListener('click', goNext);
+    if (prevBtn) prevBtn.addEventListener('click', goPrev);
+    
+    // Indicator handlers
+    indicators.forEach((ind, i) => {
+        ind.addEventListener('click', () => {
+            currentCenter = i;
+            render();
+        });
+    });
+    
+    // Click side card to bring to center
+    allCards.forEach((card, i) => {
+        card.addEventListener('click', () => {
+            if (!card.classList.contains('center')) {
+                currentCenter = i;
+                render();
+            }
+        });
+    });
+    
+    // Keyboard
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') goPrev();
+        if (e.key === 'ArrowRight') goNext();
+    });
+    
+    // Touch swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    carousel.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    carousel.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const swipeDistance = touchStartX - touchEndX;
+        if (Math.abs(swipeDistance) > 50) {
+            if (swipeDistance > 0) goNext();
+            else goPrev();
+        }
+    }, { passive: true });
+    
+    // Auto-play (pause on hover/touch)
+    let autoplayInterval = setInterval(goNext, 5000);
+    
+    carousel.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+    carousel.addEventListener('mouseleave', () => {
+        autoplayInterval = setInterval(goNext, 5000);
+    });
+    carousel.addEventListener('touchstart', () => clearInterval(autoplayInterval), { passive: true });
+    
+    // Initialize
+    render();
+}
+
+setupCarousel();
 
 console.log('🕉️ Website initialized successfully');

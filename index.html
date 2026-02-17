@@ -60,19 +60,35 @@
                 <a href="#books" class="cta-button">ग्रन्थ पढ़ें</a>
             </div>
             <div class="hero-image">
-                <div class="floating-om">ॐ</div>
+                <div class="author-portrait">
+                    <div class="portrait-ring"></div>
+                    <img 
+                        src="Author.png" 
+                        alt="पं. गोविन्द मकरन्द दुबे"
+                        class="author-photo"
+                    >
+                    <div class="portrait-decoration">
+                        <span class="portrait-om">ॐ</span>
+                    </div>
+                </div>
+                <p class="portrait-caption">पं. गोविन्द मकरन्द दुबे</p>
             </div>
         </div>
     </section>
 
     <!-- Books Showcase Section -->
     <section id="books" class="books-section">
-        <div class="section-header">
+        <div class="section-header scroll-reveal">
             <h2 class="section-title">उपलब्ध ग्रन्थ</h2>
             <p class="section-subtitle">मूल संस्कृत श्लोकों सहित हिन्दी अनुवाद</p>
         </div>
 
-        <div class="books-grid">
+        <div class="carousel-container">
+            <button class="carousel-btn carousel-prev" aria-label="पिछला ग्रन्थ">
+                <span>❮</span>
+            </button>
+            
+            <div class="books-carousel">
             <!-- Book 1: Hindi Geeta -->
             <article class="book-card" data-book="geeta">
                 <div class="book-cover-container">
@@ -149,14 +165,17 @@
                     <div class="book-overlay">
                         <span class="overlay-text">और जानें</span>
                     </div>
+                    <div class="work-in-progress-badge">
+                        <span>⏳ कार्यरत</span>
+                    </div>
                 </div>
                 <div class="book-info">
                     <h3 class="book-title">हिन्दी रामायण</h3>
                     <p class="book-subtitle">श्रीरामायण का हिन्दी छन्दों में अनुवाद</p>
                     <p class="book-details">वाल्मीकि रामायण पर आधारित</p>
                     <div class="book-meta">
-                        <span class="meta-item">📖 7 काण्ड</span>
-                        <span class="meta-item">✨ 24,000 श्लोक</span>
+                        <span class="meta-item">📖 बालकाण्ड (उपलब्ध)</span>
+                        <span class="meta-item">⏳ शेष कार्यरत</span>
                     </div>
                     <div class="book-actions">
                         <a href="ramayana.html" class="btn btn-primary" aria-label="हिन्दी रामायण ऑनलाइन पढ़ें">
@@ -169,44 +188,34 @@
                 </div>
             </article>
 
-            <!-- Book 4: Coming Soon -->
-            <article class="book-card book-card-upcoming" data-book="upcoming">
-                <div class="book-cover-container">
-                    <div class="coming-soon-cover">
-                        <div class="coming-soon-content">
-                            <span class="om-symbol-large">ॐ</span>
-                            <span class="coming-soon-badge">शीघ्र आगमन</span>
-                            <p class="coming-soon-text">नया ग्रन्थ</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="book-info">
-                    <h3 class="book-title">आगामी प्रकाशन</h3>
-                    <p class="book-subtitle">नवीनतम अनुवाद कार्य प्रगति पर है</p>
-                    <p class="book-details">प्रकाशन शीघ्र</p>
-                    <div class="book-meta">
-                        <span class="meta-item">🔔 सूचना पाएं</span>
-                        <span class="meta-item">⏳ प्रतीक्षारत</span>
-                    </div>
-                    <div class="book-actions">
-                        <button class="btn btn-primary" disabled aria-label="शीघ्र उपलब्ध">
-                            <span>📖</span> शीघ्र उपलब्ध
-                        </button>
-                        <button class="btn btn-secondary" disabled aria-label="डाउनलोड शीघ्र">
-                            <span>⬇</span> डाउनलोड शीघ्र
-                        </button>
-                    </div>
-                </div>
-            </article>
+            </div>
+            
+            <button class="carousel-btn carousel-next" aria-label="अगला ग्रन्थ">
+                <span>❯</span>
+            </button>
+            
+            <div class="carousel-indicators">
+                <button class="indicator active" data-slide="0" aria-label="ग्रन्थ 1"></button>
+                <button class="indicator" data-slide="1" aria-label="ग्रन्थ 2"></button>
+                <button class="indicator" data-slide="2" aria-label="ग्रन्थ 3"></button>
+            </div>
         </div>
     </section>
 
     <!-- About Preview Section -->
     <section class="about-preview">
         <div class="about-content">
-            <h2 class="section-title">अनुवादक के बारे में</h2>
+            <h2 class="section-title scroll-reveal">अनुवादक के बारे में</h2>
             <div class="about-grid">
-                <div class="about-text">
+                <div class="about-photo-container scroll-reveal">
+                    <img 
+                        src="Author.png" 
+                        alt="पं. गोविन्द मकरन्द दुबे"
+                        class="about-author-photo"
+                        loading="lazy"
+                    >
+                </div>
+                <div class="about-text scroll-reveal">
                     <h3>पं. गोविन्द मकरन्द दुबे</h3>
                     <p>
                         संस्कृत और हिन्दी के प्रकाण्ड विद्वान् पं. गोविन्द मकरन्द दुबे जी ने 
@@ -220,7 +229,7 @@
                     </p>
                     <a href="about.html" class="btn btn-primary">और जानें</a>
                 </div>
-                <div class="about-quote">
+                <div class="about-quote scroll-reveal">
                     <blockquote>
                         <p class="quote-text">
                             "धर्मग्रन्थों का सच्चा उद्देश्य मानव जीवन को उन्नत बनाना है। 
@@ -233,8 +242,27 @@
         </div>
     </section>
 
+    <!-- Featured Verse Section -->
+    <section class="featured-verse-section">
+        <div class="verse-container scroll-reveal">
+            <h2 class="section-title">आज का श्लोक</h2>
+            <div class="verse-card">
+                <div class="verse-sanskrit" id="verse-sanskrit"></div>
+                <div class="verse-divider">
+                    <span class="divider-om">ॐ</span>
+                </div>
+                <div class="verse-hindi" id="verse-hindi"></div>
+                <div class="verse-source" id="verse-source"></div>
+            </div>
+            <button class="verse-refresh-btn" id="verse-refresh" aria-label="नया श्लोक देखें">
+                <span>🔄</span> नया श्लोक
+            </button>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="site-footer">
+        <div class="footer-decorative-border"></div>
         <div class="footer-content">
             <div class="footer-section">
                 <h4>ग्रन्थ</h4>
@@ -258,6 +286,22 @@
                     जबलपुर, मध्य प्रदेश
                 </p>
             </div>
+            <div class="footer-section">
+                <h4>साझा करें</h4>
+                <div class="share-links">
+                    <a href="https://wa.me/?text=हिन्दी धार्मिक ग्रन्थ - गीता, भागवत और रामायण का सरल हिन्दी अनुवाद" 
+                       class="share-link whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp पर साझा करें">
+                        WhatsApp
+                    </a>
+                    <a href="mailto:?subject=हिन्दी धार्मिक ग्रन्थ&body=गीता, भागवत और रामायण का सरल हिन्दी अनुवाद देखें" 
+                       class="share-link email" aria-label="ईमेल से साझा करें">
+                        ईमेल
+                    </a>
+                    <button class="share-link copy-link" onclick="navigator.clipboard.writeText(window.location.href)" aria-label="लिंक कॉपी करें">
+                        लिंक कॉपी करें
+                    </button>
+                </div>
+            </div>
         </div>
         <div class="footer-bottom">
             <p class="copyright">
@@ -270,6 +314,7 @@
     </footer>
 
     <!-- JavaScript -->
+    <script src="verses.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

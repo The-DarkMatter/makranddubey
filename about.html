@@ -39,9 +39,15 @@
     <!-- About Hero Section -->
     <section class="about-hero">
         <div class="about-hero-content">
-            <span class="om-large">ॐ</span>
-            <h1 class="page-title">अनुवादक के बारे में</h1>
-            <p class="page-subtitle">संस्कृत विद्वान् एवं धर्मग्रन्थों के सरल हिन्दी अनुवादक</p>
+            <div class="about-hero-portrait">
+                <img 
+                    src="Author.png" 
+                    alt="पं. गोविन्द मकरन्द दुबे"
+                    class="about-hero-photo"
+                >
+            </div>
+            <h1 class="page-title">पं. गोविन्द मकरन्द दुबे</h1>
+            <p class="page-subtitle">संस्कृत विद्वान् • हिन्दी काव्यकार • धर्मग्रन्थ अनुवादक</p>
         </div>
     </section>
 
@@ -50,18 +56,9 @@
         <div class="content-wrapper">
             <!-- Translator Profile -->
             <div class="translator-profile">
-                <div class="profile-header">
-                    <div class="profile-symbol">
-                        <span class="om-profile">ॐ</span>
-                    </div>
-                    <div class="profile-info">
-                        <h2 class="translator-name-main">पं. गोविन्द मकरन्द दुबे</h2>
-                        <p class="translator-designation">संस्कृत विद्वान् • हिन्दी काव्यकार • धर्मग्रन्थ अनुवादक</p>
-                    </div>
-                </div>
 
                 <!-- Bio Section -->
-                <div class="bio-section">
+                <div class="bio-section scroll-reveal">
                     <h3 class="section-heading">जीवन परिचय</h3>
                     <div class="bio-content">
                         <p>
@@ -83,7 +80,7 @@
                 </div>
 
                 <!-- Philosophy Section -->
-                <div class="philosophy-section">
+                <div class="philosophy-section scroll-reveal">
                     <h3 class="section-heading">उनका दर्शन</h3>
                     <blockquote class="main-quote">
                         <p class="quote-text-large">
@@ -96,7 +93,7 @@
                 </div>
 
                 <!-- Works Section -->
-                <div class="works-section">
+                <div class="works-section scroll-reveal">
                     <h3 class="section-heading">प्रमुख कृतियाँ</h3>
                     <div class="works-grid">
                         <div class="work-card">
@@ -130,7 +127,7 @@
                 </div>
 
                 <!-- Contribution Section -->
-                <div class="contribution-section">
+                <div class="contribution-section scroll-reveal">
                     <h3 class="section-heading">विशिष्ट योगदान</h3>
                     <div class="contribution-grid">
                         <div class="contribution-item">
@@ -157,7 +154,7 @@
                 </div>
 
                 <!-- Publisher Info -->
-                <div class="publisher-section">
+                <div class="publisher-section scroll-reveal">
                     <h3 class="section-heading">प्रकाशन</h3>
                     <div class="publisher-card">
                         <div class="publisher-logo">
@@ -175,7 +172,7 @@
                 </div>
 
                 <!-- Legacy Section -->
-                <div class="legacy-section">
+                <div class="legacy-section scroll-reveal">
                     <div class="legacy-content">
                         <span class="om-large">ॐ</span>
                         <h3 class="legacy-title">योगदान</h3>
@@ -205,6 +202,7 @@
 
     <!-- Footer -->
     <footer class="site-footer">
+        <div class="footer-decorative-border"></div>
         <div class="footer-content">
             <div class="footer-section">
                 <h4>ग्रन्थ</h4>
@@ -227,6 +225,22 @@
                     <strong>पाथेय प्रकाशन</strong><br>
                     जबलपुर, मध्य प्रदेश
                 </p>
+            </div>
+            <div class="footer-section">
+                <h4>साझा करें</h4>
+                <div class="share-links">
+                    <a href="https://wa.me/?text=हिन्दी धार्मिक ग्रन्थ - गीता, भागवत और रामायण का सरल हिन्दी अनुवाद" 
+                       class="share-link whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp पर साझा करें">
+                        WhatsApp
+                    </a>
+                    <a href="mailto:?subject=हिन्दी धार्मिक ग्रन्थ&body=गीता, भागवत और रामायण का सरल हिन्दी अनुवाद देखें" 
+                       class="share-link email" aria-label="ईमेल से साझा करें">
+                        ईमेल
+                    </a>
+                    <button class="share-link copy-link" onclick="navigator.clipboard.writeText(window.location.href)" aria-label="लिंक कॉपी करें">
+                        लिंक कॉपी करें
+                    </button>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
@@ -253,18 +267,39 @@
         .about-hero-content {
             max-width: 800px;
             margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+        
+        .about-hero-portrait {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), 0 0 0 4px rgba(255, 255, 255, 0.4);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .about-hero-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
         }
         
         .page-title {
             font-family: var(--font-hindi);
             font-size: 3rem;
             font-weight: 700;
-            margin-bottom: var(--spacing-sm);
+            margin-bottom: var(--spacing-xs);
         }
         
         .page-subtitle {
-            font-size: 1.25rem;
-            opacity: 0.95;
+            font-size: 1.15rem;
+            opacity: 0.9;
+            letter-spacing: 0.5px;
         }
         
         .about-content-section {
@@ -282,43 +317,7 @@
             border-radius: var(--radius-xl);
             padding: var(--spacing-xl);
             box-shadow: var(--shadow-lg);
-        }
-        
-        .profile-header {
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-lg);
-            margin-bottom: var(--spacing-xl);
-            padding-bottom: var(--spacing-lg);
-            border-bottom: 2px solid var(--color-soft-yellow);
-        }
-        
-        .profile-symbol {
-            width: 100px;
-            height: 100px;
-            background: var(--gradient-warm);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--shadow-md);
-        }
-        
-        .om-profile {
-            font-size: 3rem;
-            color: var(--color-white);
-        }
-        
-        .translator-name-main {
-            font-family: var(--font-hindi);
-            font-size: 2.5rem;
-            color: var(--color-deep-red);
-            margin-bottom: var(--spacing-xs);
-        }
-        
-        .translator-designation {
-            font-size: 1.1rem;
-            color: rgba(74, 44, 42, 0.7);
+            border-top: 4px solid var(--color-saffron);
         }
         
         .section-heading {
@@ -424,6 +423,14 @@
         .contribution-item {
             text-align: center;
             padding: var(--spacing-md);
+            background: var(--color-soft-yellow);
+            border-radius: var(--radius-lg);
+            transition: all var(--transition-normal);
+        }
+        
+        .contribution-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-sm);
         }
         
         .contribution-icon {
@@ -530,19 +537,19 @@
                 font-size: 2rem;
             }
             
-            .translator-name-main {
-                font-size: 2rem;
-            }
-            
-            .profile-header {
-                flex-direction: column;
-                text-align: center;
+            .about-hero-portrait {
+                width: 140px;
+                height: 140px;
             }
             
             .publisher-card {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
+            }
+            
+            .section-heading {
+                font-size: 1.6rem;
             }
         }
     </style>
