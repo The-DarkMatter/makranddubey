@@ -71,152 +71,60 @@
         </div>
     </section>
 
-    <!-- Reading Controls -->
-    <section class="reading-controls">
-        <div class="controls-container">
-            <div class="font-controls">
-                <label for="font-size">फ़ॉन्ट आकार:</label>
-                <button class="control-btn" id="decrease-font" aria-label="फ़ॉन्ट छोटा करें">A-</button>
-                <span id="font-size-display">100%</span>
-                <button class="control-btn" id="increase-font" aria-label="फ़ॉन्ट बड़ा करें">A+</button>
-            </div>
-            <div class="view-controls">
-                <button class="control-btn active" id="dual-view" aria-label="दो-स्तम्भ दृश्य">
-                    <span>📖</span> संस्कृत-हिन्दी
-                </button>
-                <button class="control-btn" id="hindi-only" aria-label="केवल हिन्दी दृश्य">
-                    <span>📝</span> केवल हिन्दी
-                </button>
-            </div>
-            <div class="bookmark-control">
-                <button class="control-btn" id="bookmark-btn" aria-label="पृष्ठ बुकमार्क करें">
-                    <span>🔖</span> बुकमार्क
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Chapter Navigation -->
-    <section class="chapter-navigation">
-        <div class="nav-container">
-            <h3 class="chapter-nav-title">अध्याय चुनें</h3>
-            <div class="chapter-grid">
-                <a href="#chapter-1" class="chapter-link active" data-chapter="1">
-                    <span class="chapter-number">1</span>
-                    <span class="chapter-name">अर्जुनविषादयोग</span>
-                </a>
-                <a href="#chapter-2" class="chapter-link" data-chapter="2">
-                    <span class="chapter-number">2</span>
-                    <span class="chapter-name">सांख्ययोग</span>
-                </a>
-                <a href="#chapter-3" class="chapter-link" data-chapter="3">
-                    <span class="chapter-number">3</span>
-                    <span class="chapter-name">कर्मयोग</span>
-                </a>
-                <a href="#chapter-4" class="chapter-link" data-chapter="4">
-                    <span class="chapter-number">4</span>
-                    <span class="chapter-name">ज्ञानकर्मसन्न्यासयोग</span>
-                </a>
-                <a href="#chapter-5" class="chapter-link" data-chapter="5">
-                    <span class="chapter-number">5</span>
-                    <span class="chapter-name">कर्मसन्न्यासयोग</span>
-                </a>
-                <a href="#chapter-6" class="chapter-link" data-chapter="6">
-                    <span class="chapter-number">6</span>
-                    <span class="chapter-name">आत्मसंयमयोग</span>
-                </a>
-                <a href="#chapter-7" class="chapter-link" data-chapter="7">
-                    <span class="chapter-number">7</span>
-                    <span class="chapter-name">ज्ञानविज्ञानयोग</span>
-                </a>
-                <a href="#chapter-8" class="chapter-link" data-chapter="8">
-                    <span class="chapter-number">8</span>
-                    <span class="chapter-name">अक्षरब्रह्मयोग</span>
-                </a>
-                <a href="#chapter-9" class="chapter-link" data-chapter="9">
-                    <span class="chapter-number">9</span>
-                    <span class="chapter-name">राजविद्याराजगुह्ययोग</span>
-                </a>
-                <a href="#chapter-10" class="chapter-link" data-chapter="10">
-                    <span class="chapter-number">10</span>
-                    <span class="chapter-name">विभूतियोग</span>
-                </a>
-                <a href="#chapter-11" class="chapter-link" data-chapter="11">
-                    <span class="chapter-number">11</span>
-                    <span class="chapter-name">विश्वरूपदर्शनयोग</span>
-                </a>
-                <a href="#chapter-12" class="chapter-link" data-chapter="12">
-                    <span class="chapter-number">12</span>
-                    <span class="chapter-name">भक्तियोग</span>
-                </a>
-                <a href="#chapter-13" class="chapter-link" data-chapter="13">
-                    <span class="chapter-number">13</span>
-                    <span class="chapter-name">क्षेत्रक्षेत्रज्ञविभागयोग</span>
-                </a>
-                <a href="#chapter-14" class="chapter-link" data-chapter="14">
-                    <span class="chapter-number">14</span>
-                    <span class="chapter-name">गुणत्रयविभागयोग</span>
-                </a>
-                <a href="#chapter-15" class="chapter-link" data-chapter="15">
-                    <span class="chapter-number">15</span>
-                    <span class="chapter-name">पुरुषोत्तमयोग</span>
-                </a>
-                <a href="#chapter-16" class="chapter-link" data-chapter="16">
-                    <span class="chapter-number">16</span>
-                    <span class="chapter-name">दैवासुरसम्पद्विभागयोग</span>
-                </a>
-                <a href="#chapter-17" class="chapter-link" data-chapter="17">
-                    <span class="chapter-number">17</span>
-                    <span class="chapter-name">श्रद्धात्रयविभागयोग</span>
-                </a>
-                <a href="#chapter-18" class="chapter-link" data-chapter="18">
-                    <span class="chapter-number">18</span>
-                    <span class="chapter-name">मोक्षसन्न्यासयोग</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Reading Content -->
-    <section class="reading-content" id="reading-area">
+    <!-- Content Preview Section -->
+    <section class="content-preview">
         <div class="content-container">
-            <div class="pdf-viewer-message">
-                <div class="message-content">
-                    <span class="om-large">ॐ</span>
-                    <h2>पूर्ण ग्रन्थ पढ़ने के लिए</h2>
-                    <p>कृपया PDF डाउनलोड करें या नीचे दिए गए बटन से पुस्तक खोलें</p>
-                    <div class="message-actions">
-                        <a href="HindiGeeta/book.pdf" class="btn btn-primary" target="_blank">
-                            <span>📖</span> PDF में पढ़ें
-                        </a>
-                        <a href="HindiGeeta/book.pdf" class="btn btn-secondary" download>
-                            <span>⬇</span> डाउनलोड करें
-                        </a>
+            <div class="preview-message">
+                <span class="om-large">ॐ</span>
+                <h2>ग्रन्थ का संक्षिप्त परिचय</h2>
+                <p class="intro-text">
+                    यह संस्करण मूल संस्कृत श्लोकों के साथ सरल हिन्दी छन्दों में अनुवाद प्रस्तुत करता है। 
+                    प्रत्येक पृष्ठ पर बाएँ ओर मूल संस्कृत पाठ और दाएँ ओर हिन्दी अनुवाद दिया गया है।
+                </p>
+                
+                <div class="chapters-info">
+                    <h3>अध्याय सूची</h3>
+                    <div class="chapter-list">
+                        <div class="chapter-item">१. अर्जुन विषाद योग</div>
+                        <div class="chapter-item">२. सांख्य योग</div>
+                        <div class="chapter-item">३. कर्म योग</div>
+                        <div class="chapter-item">४. ज्ञान-कर्म-सन्न्यास योग</div>
+                        <div class="chapter-item">५. कर्म-सन्न्यास योग</div>
+                        <div class="chapter-item">६. आत्म-संयम योग</div>
+                        <div class="chapter-item">७. ज्ञान विज्ञान योग</div>
+                        <div class="chapter-item">८. अक्षर ब्रह्म योग</div>
+                        <div class="chapter-item">९. राजविद्या योग</div>
+                        <div class="chapter-item">१०. विभूति योग</div>
+                        <div class="chapter-item">११. विश्वरूप दर्शन योग</div>
+                        <div class="chapter-item">१२. भक्ति योग</div>
+                        <div class="chapter-item">१३. क्षेत्र-क्षेत्रज्ञ विभाग योग</div>
+                        <div class="chapter-item">१४. गुणत्रय विभाग योग</div>
+                        <div class="chapter-item">१५. पुरुषोत्तम योग</div>
+                        <div class="chapter-item">१६. दैवासुर सम्पदा विभाग योग</div>
+                        <div class="chapter-item">१७. श्रद्धा त्रय विभाग योग</div>
+                        <div class="chapter-item">१८. मोक्ष संन्यास योग</div>
                     </div>
-                    <div class="sample-preview">
-                        <h3>नमूना - प्रथम अध्याय (अर्जुनविषादयोग)</h3>
-                        <div class="verse-container dual-column">
-                            <div class="sanskrit-text">
-                                <p class="verse-number">श्लोक 1</p>
-                                <p class="verse-sanskrit">
-                                    धृतराष्ट्र उवाच।<br>
-                                    धर्मक्षेत्रे कुरुक्षेत्रे समवेता युयुत्सवः।<br>
-                                    मामकाः पाण्डवाश्चैव किमकुर्वत सञ्जय।।1।।
-                                </p>
-                            </div>
-                            <div class="hindi-text">
-                                <p class="verse-number">हिन्दी अनुवाद</p>
-                                <p class="verse-hindi">
-                                    धृतराष्ट्र ने कहा—<br>
-                                    हे संजय! धर्मभूमि कुरुक्षेत्र में एकत्रित,<br>
-                                    युद्ध के इच्छुक मेरे और पाण्डु के पुत्रों ने,<br>
-                                    क्या किया? मुझे बताओ विस्तार से।
-                                </p>
-                            </div>
+                </div>
+
+                <div class="sample-preview">
+                    <h3>पृष्ठ का नमूना</h3>
+                    <p class="sample-description">पुस्तक में प्रत्येक पृष्ठ पर दो स्तम्भ हैं - बाएँ में संस्कृत और दाएँ में हिन्दी अनुवाद</p>
+                    <div class="verse-container dual-column">
+                        <div class="sanskrit-text">
+                            <p class="verse-number">श्लोक 1</p>
+                            <p class="verse-sanskrit">
+                                धृतराष्ट्र उवाच।<br>
+                                धर्मक्षेत्रे कुरुक्षेत्रे समवेता युयुत्सवः।<br>
+                                मामकाः पाण्डवाश्चैव किमकुर्वत सञ्जय ।।१।।
+                            </p>
                         </div>
-                        <p class="sample-note">
-                            * यह केवल एक नमूना है। सम्पूर्ण ग्रन्थ पढ़ने के लिए कृपया PDF डाउनलोड करें।
-                        </p>
+                        <div class="hindi-text">
+                            <p class="verse-number">हिन्दी अनुवाद</p>
+                            <p class="verse-hindi">
+                                संजय से धृतराष्ट्र पूछते, एकत्रित युद्ध के लिए।<br>
+                                धर्मधरा कुरु भू में, क्या पाण्डव, क्या मेरे पुत्र किए? ।।१।।
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -260,6 +168,5 @@
     </footer>
 
     <script src="script.js"></script>
-    <script src="reader.js"></script>
 </body>
 </html>
