@@ -115,7 +115,7 @@
         <nav class="nav-container" role="navigation" aria-label="मुख्य नेविगेशन">
             <div class="logo">
                 <span class="om-symbol">ॐ</span>
-                <span class="site-title">हिन्दी धार्मिक ग्रन्थ</span>
+                <span class="site-title" data-translate="site-title">हिन्दी धार्मिक ग्रन्थ</span>
             </div>
             <button class="mobile-menu-toggle" aria-label="मेनू खोलें" aria-expanded="false">
                 <span></span>
@@ -123,10 +123,11 @@
                 <span></span>
             </button>
             <ul class="nav-menu">
-                <li><a href="#home" class="nav-link active">मुखपृष्ठ</a></li>
-                <li><a href="#books" class="nav-link">ग्रन्थ</a></li>
-                <li><a href="about.html" class="nav-link">अनुवादक</a></li>
-                <li><a href="contact.html" class="nav-link">सम्पर्क</a></li>
+                <li><a href="#home" class="nav-link active" data-translate="nav-home">मुखपृष्ठ</a></li>
+                <li><a href="#books" class="nav-link" data-translate="nav-books">ग्रन्थ</a></li>
+                <li><a href="about.html" class="nav-link" data-translate="nav-about">अनुवादक</a></li>
+                <li><a href="contact.html" class="nav-link" data-translate="nav-contact">सम्पर्क</a></li>
+                <li><button class="lang-toggle-btn" onclick="setLanguage(getCurrentLanguage() === 'hi' ? 'en' : 'hi')" aria-label="Toggle Language">English</button></li>
             </ul>
         </nav>
     </header>
@@ -138,18 +139,18 @@
             <div class="hero-text">
                 <h1 class="hero-title">
                     <span class="om-large">ॐ</span>
-                    <span class="title-main">हिन्दी धार्मिक ग्रन्थ</span>
+                    <span class="title-main" data-translate="hero-title">हिन्दी धार्मिक ग्रन्थ</span>
                 </h1>
-                <p class="hero-subtitle">प्राचीन संस्कृत ग्रन्थों का सरल हिन्दी अनुवाद</p>
+                <p class="hero-subtitle" data-translate="hero-subtitle">प्राचीन संस्कृत ग्रन्थों का सरल हिन्दी अनुवाद</p>
                 <div class="translator-intro">
-                    <p class="translator-name">अनुवादक: <strong>पं. गोविन्द मकरन्द दुबे</strong></p>
-                    <p class="translator-desc">
+                    <p class="translator-name"><span data-translate="translator-label">अनुवादक:</span> <strong data-translate="translator-name">पं. गोविन्द मकरन्द दुबे</strong></p>
+                    <p class="translator-desc" data-translate="translator-desc">
                         संस्कृत विद्वान् एवं हिन्दी काव्य के प्रकाण्ड पण्डित द्वारा 
                         श्रीमद्भगवद्गीता, भागवत पुराण और रामायण का सरल हिन्दी छन्दों में 
                         भावानुवाद, जो आम पाठकों के लिए सुलभ और सुबोध है।
                     </p>
                 </div>
-                <a href="#books" class="cta-button">ग्रन्थ पढ़ें</a>
+                <a href="#books" class="cta-button" data-translate="cta-button">ग्रन्थ पढ़ें</a>
             </div>
             <div class="hero-image">
                 <div class="author-portrait">
@@ -164,7 +165,7 @@
                         <span class="portrait-om">ॐ</span>
                     </div>
                 </div>
-                <p class="portrait-caption">पं. गोविन्द मकरन्द दुबे</p>
+                <p class="portrait-caption" data-translate="translator-name">पं. गोविन्द मकरन्द दुबे</p>
             </div>
         </div>
     </section>
@@ -172,8 +173,8 @@
     <!-- Books Showcase Section -->
     <section id="books" class="books-section">
         <div class="section-header scroll-reveal">
-            <h2 class="section-title">उपलब्ध ग्रन्थ</h2>
-            <p class="section-subtitle">मूल संस्कृत श्लोकों सहित हिन्दी अनुवाद</p>
+            <h2 class="section-title" data-translate="section-title-books">उपलब्ध ग्रन्थ</h2>
+            <p class="section-subtitle" data-translate="section-subtitle-books">मूल संस्कृत श्लोकों सहित हिन्दी अनुवाद</p>
         </div>
 
         <div class="carousel-container">
@@ -197,19 +198,19 @@
                     </a>
                 </div>
                 <div class="book-info">
-                    <h3 class="book-title">हिन्दी-गीता</h3>
-                    <p class="book-subtitle">श्रीमद्भगवद्गीता का हिन्दी छन्दों में अनुवाद</p>
-                    <p class="book-details">मूल संस्कृत श्लोकों सहित</p>
+                    <h3 class="book-title" data-translate="book-geeta-title">हिन्दी-गीता</h3>
+                    <p class="book-subtitle" data-translate="book-geeta-subtitle">श्रीमद्भगवद्गीता का हिन्दी छन्दों में अनुवाद</p>
+                    <p class="book-details" data-translate="book-geeta-details">मूल संस्कृत श्लोकों सहित</p>
                     <div class="book-meta">
-                        <span class="meta-item">📖 18 अध्याय</span>
-                        <span class="meta-item">✨ 700 श्लोक</span>
+                        <span class="meta-item">📖 <span data-translate="book-geeta-chapters">18 अध्याय</span></span>
+                        <span class="meta-item">✨ <span data-translate="book-geeta-verses">700 श्लोक</span></span>
                     </div>
                     <div class="book-actions">
                         <a href="geeta.html" class="btn btn-primary" aria-label="हिन्दी-गीता ऑनलाइन पढ़ें">
-                            <span>📖</span> ऑनलाइन पढ़ें
+                            <span>📖</span> <span data-translate="read-online">ऑनलाइन पढ़ें</span>
                         </a>
                         <a href="HindiGeeta/book.pdf" class="btn btn-secondary" download aria-label="हिन्दी-गीता PDF डाउनलोड करें">
-                            <span>⬇</span> PDF डाउनलोड करें
+                            <span>⬇</span> <span data-translate="download-pdf">PDF डाउनलोड करें</span>
                         </a>
                     </div>
                 </div>
@@ -229,19 +230,19 @@
                     </a>
                 </div>
                 <div class="book-info">
-                    <h3 class="book-title">हिन्दी भागवत</h3>
-                    <p class="book-subtitle">श्रीमद्भागवत पुराण का हिन्दी अनुवाद</p>
-                    <p class="book-details">मूल संस्कृत श्लोकों सहित</p>
+                    <h3 class="book-title" data-translate="book-bhagwat-title">हिन्दी भागवत</h3>
+                    <p class="book-subtitle" data-translate="book-bhagwat-subtitle">श्रीमद्भागवत पुराण का हिन्दी अनुवाद</p>
+                    <p class="book-details" data-translate="book-bhagwat-details">मूल संस्कृत श्लोकों सहित</p>
                     <div class="book-meta">
-                        <span class="meta-item">📖 12 स्कन्ध</span>
-                        <span class="meta-item">✨ 18,000 श्लोक</span>
+                        <span class="meta-item">📖 <span data-translate="book-bhagwat-chapters">12 स्कन्ध</span></span>
+                        <span class="meta-item">✨ <span data-translate="book-bhagwat-verses">18,000 श्लोक</span></span>
                     </div>
                     <div class="book-actions">
                         <a href="bhagwat.html" class="btn btn-primary" aria-label="हिन्दी भागवत ऑनलाइन पढ़ें">
-                            <span>📖</span> ऑनलाइन पढ़ें
+                            <span>📖</span> <span data-translate="read-online">ऑनलाइन पढ़ें</span>
                         </a>
                         <a href="HindiBhagwat/book.pdf" class="btn btn-secondary" download aria-label="हिन्दी भागवत PDF डाउनलोड करें">
-                            <span>⬇</span> PDF डाउनलोड करें
+                            <span>⬇</span> <span data-translate="download-pdf">PDF डाउनलोड करें</span>
                         </a>
                     </div>
                 </div>
@@ -260,23 +261,23 @@
                         <span class="overlay-text">और जानें</span>
                     </a>
                     <div class="work-in-progress-badge">
-                        <span>⏳ कार्यरत</span>
+                        <span>⏳ <span data-translate="work-in-progress">कार्यरत</span></span>
                     </div>
                 </div>
                 <div class="book-info">
-                    <h3 class="book-title">हिन्दी रामायण</h3>
-                    <p class="book-subtitle">श्रीरामायण का हिन्दी छन्दों में अनुवाद</p>
-                    <p class="book-details">वाल्मीकि रामायण पर आधारित</p>
+                    <h3 class="book-title" data-translate="book-ramayana-title">हिन्दी रामायण</h3>
+                    <p class="book-subtitle" data-translate="book-ramayana-subtitle">श्रीरामायण का हिन्दी छन्दों में अनुवाद</p>
+                    <p class="book-details" data-translate="book-ramayana-details">वाल्मीकि रामायण पर आधारित</p>
                     <div class="book-meta">
-                        <span class="meta-item">📖 बालकाण्ड (उपलब्ध)</span>
-                        <span class="meta-item">⏳ शेष कार्यरत</span>
+                        <span class="meta-item">📖 <span data-translate="book-ramayana-chapters">बालकाण्ड (उपलब्ध)</span></span>
+                        <span class="meta-item">⏳ <span data-translate="book-ramayana-status">शेष कार्यरत</span></span>
                     </div>
                     <div class="book-actions">
                         <a href="ramayana.html" class="btn btn-primary" aria-label="हिन्दी रामायण ऑनलाइन पढ़ें">
-                            <span>📖</span> ऑनलाइन पढ़ें
+                            <span>📖</span> <span data-translate="read-online">ऑनलाइन पढ़ें</span>
                         </a>
                         <a href="HindiRamayana/book.pdf" class="btn btn-secondary" download aria-label="हिन्दी रामायण PDF डाउनलोड करें">
-                            <span>⬇</span> PDF डाउनलोड करें
+                            <span>⬇</span> <span data-translate="download-pdf">PDF डाउनलोड करें</span>
                         </a>
                     </div>
                 </div>
@@ -299,7 +300,7 @@
     <!-- About Preview Section -->
     <section class="about-preview">
         <div class="about-content">
-            <h2 class="section-title scroll-reveal">अनुवादक के बारे में</h2>
+            <h2 class="section-title scroll-reveal" data-translate="section-title-about">अनुवादक के बारे में</h2>
             <div class="about-grid">
                 <div class="about-photo-container scroll-reveal">
                     <img 
@@ -310,26 +311,26 @@
                     >
                 </div>
                 <div class="about-text scroll-reveal">
-                    <h3>पं. गोविन्द मकरन्द दुबे</h3>
-                    <p>
+                    <h3 data-translate="translator-name">पं. गोविन्द मकरन्द दुबे</h3>
+                    <p data-translate="about-text-1">
                         संस्कृत और हिन्दी के प्रकाण्ड विद्वान् पं. गोविन्द मकरन्द दुबे जी ने 
                         अपना सम्पूर्ण जीवन धार्मिक ग्रन्थों के अध्ययन और उन्हें सरल हिन्दी में 
                         प्रस्तुत करने में समर्पित किया। उनका उद्देश्य संस्कृत के गूढ़ ज्ञान को 
                         आम जनमानस तक पहुँचाना रहा है।
                     </p>
-                    <p>
+                    <p data-translate="about-text-2">
                         उनके अनुवाद में मूल श्लोकों का भाव और संदेश अक्षुण्ण रहता है, साथ ही 
                         हिन्दी छन्दों की मधुरता भी पाठकों को आकर्षित करती है।
                     </p>
-                    <a href="about.html" class="btn btn-primary">और जानें</a>
+                    <a href="about.html" class="btn btn-primary" data-translate="learn-more">और जानें</a>
                 </div>
                 <div class="about-quote scroll-reveal">
                     <blockquote>
-                        <p class="quote-text">
+                        <p class="quote-text" data-translate="about-quote">
                             "धर्मग्रन्थों का सच्चा उद्देश्य मानव जीवन को उन्नत बनाना है। 
                             यह तभी सम्भव है जब ये ग्रन्थ सरल भाषा में सभी को उपलब्ध हों।"
                         </p>
-                        <footer class="quote-author">— पं. गोविन्द मकरन्द दुबे</footer>
+                        <footer class="quote-author">— <span data-translate="translator-name">पं. गोविन्द मकरन्द दुबे</span></footer>
                     </blockquote>
                 </div>
             </div>
@@ -339,7 +340,7 @@
     <!-- Featured Verse Section -->
     <section class="featured-verse-section">
         <div class="verse-container scroll-reveal">
-            <h2 class="section-title">आज का श्लोक</h2>
+            <h2 class="section-title" data-translate="section-title-verse">आज का श्लोक</h2>
             <div class="verse-card">
                 <div class="verse-sanskrit" id="verse-sanskrit"></div>
                 <div class="verse-divider">
@@ -349,7 +350,7 @@
                 <div class="verse-source" id="verse-source"></div>
             </div>
             <button class="verse-refresh-btn" id="verse-refresh" aria-label="नया श्लोक देखें">
-                <span>🔄</span> नया श्लोक
+                <span>🔄</span> <span data-translate="new-verse-btn">नया श्लोक</span>
             </button>
         </div>
     </section>
@@ -359,55 +360,56 @@
         <div class="footer-decorative-border"></div>
         <div class="footer-content">
             <div class="footer-section">
-                <h4>ग्रन्थ</h4>
+                <h4 data-translate="footer-books">ग्रन्थ</h4>
                 <ul>
-                    <li><a href="geeta.html">हिन्दी-गीता</a></li>
-                    <li><a href="bhagwat.html">हिन्दी भागवत</a></li>
-                    <li><a href="ramayana.html">हिन्दी रामायण</a></li>
+                    <li><a href="geeta.html" data-translate="book-geeta-title">हिन्दी-गीता</a></li>
+                    <li><a href="bhagwat.html" data-translate="book-bhagwat-title">हिन्दी भागवत</a></li>
+                    <li><a href="ramayana.html" data-translate="book-ramayana-title">हिन्दी रामायण</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h4>सम्पर्क</h4>
+                <h4 data-translate="footer-contact">सम्पर्क</h4>
                 <ul>
-                    <li><a href="about.html">अनुवादक के बारे में</a></li>
-                    <li><a href="contact.html">फीडबैक</a></li>
+                    <li><a href="about.html" data-translate="footer-about-link">अनुवादक के बारे में</a></li>
+                    <li><a href="contact.html" data-translate="footer-feedback">फीडबैक</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h4>प्रकाशक</h4>
+                <h4 data-translate="footer-publisher">प्रकाशक</h4>
                 <p class="publisher-info">
-                    <strong>पाथेय प्रकाशन</strong><br>
-                    जबलपुर, मध्य प्रदेश
+                    <strong data-translate="footer-publisher-name">पाथेय प्रकाशन</strong><br>
+                    <span data-translate="footer-publisher-location">जबलपुर, मध्य प्रदेश</span>
                 </p>
             </div>
             <div class="footer-section">
-                <h4>साझा करें</h4>
+                <h4 data-translate="footer-share">साझा करें</h4>
                 <div class="share-links">
                     <a href="https://wa.me/?text=हिन्दी धार्मिक ग्रन्थ - गीता, भागवत और रामायण का सरल हिन्दी अनुवाद" 
                        class="share-link whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp पर साझा करें">
-                        WhatsApp
+                        <span data-translate="footer-whatsapp">WhatsApp</span>
                     </a>
                     <a href="mailto:?subject=हिन्दी धार्मिक ग्रन्थ&body=गीता, भागवत और रामायण का सरल हिन्दी अनुवाद देखें" 
                        class="share-link email" aria-label="ईमेल से साझा करें">
-                        ईमेल
+                        <span data-translate="footer-email">ईमेल</span>
                     </a>
                     <button class="share-link copy-link" onclick="navigator.clipboard.writeText(window.location.href)" aria-label="लिंक कॉपी करें">
-                        लिंक कॉपी करें
+                        <span data-translate="footer-copy-link">लिंक कॉपी करें</span>
                     </button>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
             <p class="copyright">
-                &copy; 2026 पं. गोविन्द मकरन्द दुबे | सर्वाधिकार सुरक्षित
+                &copy; 2026 <span data-translate="footer-copyright">पं. गोविन्द मकरन्द दुबे | सर्वाधिकार सुरक्षित</span>
             </p>
             <p class="dedication">
-                <span class="om-small">ॐ</span> सनातन धर्म की सेवा में <span class="om-small">ॐ</span>
+                <span class="om-small">ॐ</span> <span data-translate="footer-dedication">सनातन धर्म की सेवा में</span> <span class="om-small">ॐ</span>
             </p>
         </div>
     </footer>
 
     <!-- JavaScript -->
+    <script src="translations.js"></script>
     <script src="verses.js"></script>
     <script src="script.js"></script>
 </body>
