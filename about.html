@@ -116,6 +116,19 @@
                             अनुवाद किया है। उनके अनुवाद की विशेषता यह है कि उन्होंने मूल संस्कृत श्लोकों का भाव 
                             पूर्णतः अक्षुण्ण रखते हुए हिन्दी में काव्यात्मक सुन्दरता का समावेश किया है।
                         </p>
+                        <div class="contact-block" aria-label="लेखक सम्पर्क">
+                            <div class="contact-line">
+                                <span class="contact-label">सम्पर्क</span>
+                                <a class="contact-link" href="tel:+919425152599">9425152599</a>
+                                <span class="contact-separator">,</span>
+                                <a class="contact-link" href="tel:+918839253059">8839253059</a>
+                            </div>
+                            <div class="contact-line">
+                                <span class="contact-label">E-mail</span>
+                                <span class="contact-separator">:</span>
+                                <a class="contact-link" href="mailto:dubeymakrand@gmail.com">dubeymakrand@gmail[dot]com</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -379,6 +392,47 @@
             margin-bottom: var(--spacing-md);
             line-height: 2;
             font-size: 1.1rem;
+        }
+
+        .contact-block {
+            background: #fff8ef;
+            border: 1px solid rgba(220, 20, 60, 0.18);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .contact-line {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .contact-line + .contact-line {
+            margin-top: 0.4rem;
+        }
+
+        .contact-label {
+            font-weight: 700;
+            color: var(--color-deep-red);
+        }
+
+        .contact-link {
+            color: var(--color-dark-brown);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .contact-link:hover {
+            color: var(--color-deep-red);
+            text-decoration: underline;
+        }
+
+        .contact-separator {
+            color: var(--color-dark-brown);
         }
         
         .main-quote {

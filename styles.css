@@ -648,6 +648,8 @@ button {
     justify-content: center;
     opacity: 0;
     transition: opacity var(--transition-normal);
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .book-card:hover .book-overlay {
