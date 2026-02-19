@@ -22,6 +22,15 @@ const translations = {
         // Books Section
         "section-title-books": "उपलब्ध ग्रन्थ",
         "section-subtitle-books": "मूल संस्कृत श्लोकों सहित हिन्दी अनुवाद",
+        // Video Showcase (Homepage)
+        "section-title-videos": "🎬 गीता वीडियो प्रवचन",
+        "section-subtitle-videos": "अनुवादक स्वयं की वाणी में सुनें श्रीमद्भगवद्गीता",
+        "videos-badge": "YouTube पर उपलब्ध",
+        "videos-seeall": "सभी वीडियो देखें",
+        "videos-youtube": "YouTube चैनल",
+        "video-stat-chapters": "अध्याय",
+        "video-stat-videos": "वीडियो",
+        "video-stat-self": "स्वयं पठित",
         
         // Book 1: Geeta
         "book-geeta-title": "हिन्दी-गीता",
@@ -76,6 +85,16 @@ const translations = {
         "footer-dedication": "सनातन धर्म की सेवा में"
     },
     en: {
+        // Video Showcase (Homepage)
+        "section-title-videos": "🎬 Gita Video Lectures",
+        "section-subtitle-videos": "Listen to the Bhagavad Gita narrated by the translator",
+        "videos-badge": "Available on YouTube",
+        "videos-seeall": "View all videos",
+        "videos-youtube": "YouTube Channel",
+        "video-stat-chapters": "Chapters",
+        "video-stat-videos": "Videos",
+        "video-stat-self": "Self-narrated",
+
         // Header Navigation
         "site-title": "Hindi Sacred Scriptures",
         "nav-home": "Home",
