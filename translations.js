@@ -64,7 +64,7 @@ const translations = {
         
         // About Section
         "section-title-about": "अनुवादक के बारे में",
-        "about-text-1": "संस्कृत और हिन्दी के प्रकाण्ड विद्वान् पं. गोविन्द मकरन्द दुबे जी ने अपना सम्पूर्ण जीवन धार्मिक ग्रन्थों के अध्ययन और उन्हें सरल हिन्दी में प्रस्तुत करने में समर्पित किया। उनका उद्देश्य संस्कृत के गूढ़ ज्ञान को आम जनमानस तक पहुँचाना रहा है।",
+        "about-text-1": "विधिवेत्ता, पत्रकार, संस्कृत और हिन्दी के प्रकाण्ड विद्वान् पं. गोविन्द मकरन्द दुबे जी ने 15 वर्षों तक सरकारी सेवा में कार्य किया और आवश्यक वस्तु मैन्युअल के 13 संस्करण प्रकाशित किये। सेवानिवृत्ति के पश्चात् उन्होंने अपना जीवन धार्मिक ग्रन्थों के अध्ययन और उन्हें सरल हिन्दी में प्रस्तुत करने में समर्पित किया।",
         "about-text-2": "उनके अनुवाद में मूल श्लोकों का भाव और संदेश अक्षुण्ण रहता है, साथ ही हिन्दी छन्दों की मधुरता भी पाठकों को आकर्षित करती है।",
         "about-quote": "धर्मग्रन्थों का सच्चा उद्देश्य मानव जीवन को उन्नत बनाना है। यह तभी सम्भव है जब ये ग्रन्थ सरल भाषा में सभी को उपलब्ध हों।",
         
@@ -191,7 +191,7 @@ const translations = {
         
         // About Section
         "section-title-about": "About the Translator",
-        "about-text-1": "Pandit Govind Makrand Dubey, a renowned scholar of Sanskrit and Hindi, dedicated his entire life to studying sacred texts and presenting them in simple Hindi. His goal was to bring the profound knowledge of Sanskrit to the common people.",
+        "about-text-1": "A legal author, journalist, and renowned scholar of Sanskrit and Hindi, Pt. Govind Makrand Dubey served 15 years in government service and published 13 editions of the Essential Commodities Manual. After retirement, he dedicated his life to studying sacred texts and presenting them in simple Hindi.",
         "about-text-2": "His translations preserve the essence and message of the original verses while the sweetness of Hindi verses attracts readers.",
         "about-quote": "The true purpose of sacred texts is to elevate human life. This is only possible when these texts are available to everyone in simple language.",
         
