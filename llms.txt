@@ -1,0 +1,101 @@
+# makranddubey.com
+
+> Hindi translations of sacred Sanskrit scriptures by Pandit Govind Makrand Dubey
+
+## About
+
+This website presents Hindi verse translations of ancient Sanskrit scriptures, making profound spiritual knowledge accessible to common readers. The translations are by **Pandit Govind Makrand Dubey** (पं. गोविन्द मकरन्द दुबे), a renowned Sanskrit scholar and Hindi poet from Jabalpur, Madhya Pradesh, India.
+
+Key features:
+- Original Sanskrit verses (shlokas) alongside Hindi translations
+- Poetry format (Hindi chhands/verses) preserving the beauty and essence
+- Free online reading and PDF downloads
+- Video lectures narrated by the translator himself
+
+## Books
+
+### 1. Hindi Gita (हिन्दी-गीता)
+
+The Bhagavad Gita translated into simple Hindi verses with original Sanskrit shlokas.
+
+- **Chapters**: 18
+- **Verses**: 700
+- **Status**: Complete
+- **Read Online**: https://makranddubey.com/geeta.html
+- **Download PDF**: https://makranddubey.com/HindiGeeta/book.pdf
+- **Publisher**: Pathey Prakashan, Jabalpur
+- **Summary**: The Gita is a 700-verse Hindu scripture that is part of the Mahabharata. It's a conversation between Prince Arjuna and Lord Krishna on the battlefield of Kurukshetra, covering dharma (duty), karma (action), bhakti (devotion), and moksha (liberation).
+
+### 2. Hindi Bhagwat (हिन्दी भागवत)
+
+The Bhagavat Purana (also called Srimad Bhagavatam) translated into Hindi with original Sanskrit verses.
+
+- **Chapters**: 12 Skandhas (books/cantos)
+- **Verses**: 18,000
+- **Status**: Complete
+- **Read Online**: https://makranddubey.com/bhagwat.html
+- **Download PDF**: https://makranddubey.com/HindiBhagwat/book.pdf
+- **Publisher**: Pathey Prakashan, Jabalpur
+- **Summary**: The Bhagavat Purana is one of Hinduism's eighteen great Puranas. It focuses on bhakti (devotion) to Lord Krishna/Vishnu and contains stories, philosophy, cosmology, and theology. The tenth book, describing Krishna's life, is especially revered.
+
+### 3. Hindi Ramayana (हिन्दी रामायण)
+
+Valmiki Ramayana translated into Hindi verses with original Sanskrit shlokas.
+
+- **Chapters**: Balkanda (available), remaining kandas in progress
+- **Verses**: Partial (ongoing work)
+- **Status**: In Progress
+- **Read Online**: https://makranddubey.com/ramayana.html
+- **Download PDF**: https://makranddubey.com/HindiRamayana/book.pdf
+- **Publisher**: Pathey Prakashan, Jabalpur
+- **Summary**: The Ramayana is an ancient Sanskrit epic attributed to sage Valmiki. It narrates the life of Lord Rama, his exile, the abduction of his wife Sita by demon king Ravana, and the eventual victory of good over evil.
+
+## Videos
+
+The translator has personally narrated the complete Bhagavad Gita in Hindi on YouTube:
+
+- **Channel**: @Hindi_Geeta
+- **Content**: All 18 chapters of the Bhagavad Gita
+- **Videos**: 50+ video lectures
+- **Format**: Self-narrated in Hindi with chapter breakdowns
+- **Watch**: https://makranddubey.com/geeta-videos.html
+
+Each chapter is explained in simple Hindi, making the profound philosophy accessible to modern audiences.
+
+## Translator
+
+**Pandit Govind Makrand Dubey** (पं. गोविन्द मकरन्द दुबे) was a Sanskrit scholar and Hindi poetry expert who dedicated his life to making ancient Sanskrit texts accessible to common people through simple Hindi translations. His work preserves the original meaning and essence while presenting them in melodious Hindi verses (chhands).
+
+His philosophy:
+> "The true purpose of sacred texts is to elevate human life. This is only possible when these texts are available to everyone in simple language."
+
+## Publisher
+
+**Pathey Prakashan** (पाथेय प्रकाशन)
+Jabalpur, Madhya Pradesh, India
+
+Contact:
+- Email: dubeymakrand@gmail.com
+- Phone: +91-9425152599, +91-8839253059
+
+## Navigation
+
+- Home: https://makranddubey.com/
+- About Translator: https://makranddubey.com/about.html
+- Contact: https://makranddubey.com/contact.html
+- Gita Videos: https://makranddubey.com/geeta-videos.html
+
+## Technical Details
+
+- All books feature side-by-side Sanskrit and Hindi text
+- Free to read online and download
+- Responsive web reading experience
+- PDF versions available for offline reading
+- Built-in verse navigation and chapter selection
+- Language toggle (Hindi/English interface) on home page
+
+## Purpose
+
+This website serves the mission of making ancient Sanskrit wisdom accessible to Hindi-speaking audiences worldwide. The translations maintain scholarly accuracy while being readable by anyone familiar with Hindi, regardless of their Sanskrit knowledge.
+
+The works are offered freely in service of Sanatan Dharma (सनातन धर्म की सेवा में).

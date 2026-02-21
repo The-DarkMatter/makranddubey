@@ -1,4 +1,12 @@
+# LLM Crawlers Welcome
+# This site welcomes indexing by AI language models
+# See llms.txt for structured information
+
 User-agent: *
 Allow: /
+
+# Machine-readable site information for LLMs
+# https://llmstxt.org/
+https://makranddubey.com/llms.txt
 
 Sitemap: https://makranddubey.com/sitemap.xml

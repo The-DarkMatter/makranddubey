@@ -42,4 +42,28 @@
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
+    <url>
+        <loc>https://makranddubey.com/llms.txt</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://makranddubey.com/HindiGeeta/book.pdf</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://makranddubey.com/HindiBhagwat/book.pdf</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://makranddubey.com/HindiRamayana/book.pdf</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>
