@@ -320,21 +320,156 @@
     <script src="script.js"></script>
     
     <script>
-        // Formspree automatically handles form submission
-        // Just add the action="https://formspree.io/f/mvzbwrnr" to the form
-        
+        // Formspree AJAX Integration - Silent Submission
         const contactForm = document.getElementById('contactForm');
         
         if (contactForm) {
-            // Listen for form submission via Formspree
             contactForm.addEventListener('submit', function(e) {
-                // Show loading state
+                e.preventDefault();
+                
                 const submitBtn = contactForm.querySelector('.btn-submit');
                 const originalText = submitBtn.innerHTML;
                 submitBtn.innerHTML = '<span>⏳</span> भेज रहे हैं...';
                 submitBtn.disabled = true;
+                
+                // Collect form data
+                const formData = new FormData(contactForm);
+                
+                // Submit via AJAX (silent, no redirect)
+                fetch('https://formspree.io/f/mvzbwrnr', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        showSuccessMessage();
+                        contactForm.reset();
+                    } else {
+                        showErrorMessage();
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    showErrorMessage();
+                })
+                .finally(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                });
             });
         }
+        
+        function showSuccessMessage() {
+            const successDiv = document.createElement('div');
+            successDiv.className = 'success-message';
+            successDiv.innerHTML = `
+                <div class="success-content">
+                    <span class="success-icon">✅</span>
+                    <h3>धन्यवाद!</h3>
+                    <p>आपका संदेश सफलतापूर्वक प्राप्त हुआ।</p>
+                    <p style="font-size: 0.9rem; opacity: 0.8;">हम शीघ्र ही आपसे सम्पर्क करेंगे।</p>
+                    <button class="btn btn-primary" onclick="this.parentElement.parentElement.remove()">बंद करें</button>
+                </div>
+            `;
+            successDiv.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.7);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+                animation: fadeIn 0.3s ease;
+            `;
+            
+            document.body.appendChild(successDiv);
+        }
+        
+        function showErrorMessage() {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.innerHTML = `
+                <div class="error-content">
+                    <span class="error-icon">❌</span>
+                    <h3>त्रुटि!</h3>
+                    <p>संदेश भेजने में त्रुटि हुई। कृपया पुनः प्रयास करें।</p>
+                    <button class="btn btn-primary" onclick="this.parentElement.parentElement.remove()">बंद करें</button>
+                </div>
+            `;
+            errorDiv.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.7);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+                animation: fadeIn 0.3s ease;
+            `;
+            
+            document.body.appendChild(errorDiv);
+        }
+        
+        // Add animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+            
+            .success-content, .error-content {
+                background: white;
+                padding: 3rem;
+                border-radius: 1rem;
+                text-align: center;
+                max-width: 500px;
+                animation: slideUp 0.3s ease;
+            }
+            
+            @keyframes slideUp {
+                from {
+                    transform: translateY(50px);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+            
+            .success-icon, .error-icon {
+                font-size: 4rem;
+                display: block;
+                margin-bottom: 1rem;
+            }
+            
+            .success-content h3, .error-content h3 {
+                font-family: var(--font-hindi);
+                color: var(--color-deep-red);
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+            
+            .success-content p, .error-content p {
+                margin-bottom: 0.5rem;
+                line-height: 1.8;
+            }
+            
+            .success-content .btn, .error-content .btn {
+                margin-top: 2rem;
+            }
+        `;
+        document.head.appendChild(style);
     </script>
     
     <style>
