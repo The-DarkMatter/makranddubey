@@ -105,7 +105,7 @@
                         यदि आपके पास कोई प्रश्न, सुझाव या फीडबैक है, तो कृपया नीचे दिए गए फॉर्म को भरें।
                     </p>
                     
-                    <form class="contact-form" id="contactForm">
+                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/mvzbwrnr" method="POST">
                         <div class="form-group">
                             <label for="name" class="form-label">नाम <span class="required">*</span></label>
                             <input 
@@ -320,109 +320,21 @@
     <script src="script.js"></script>
     
     <script>
-        // Contact Form Handling
+        // Formspree automatically handles form submission
+        // Just add the action="https://formspree.io/f/mvzbwrnr" to the form
+        
         const contactForm = document.getElementById('contactForm');
         
         if (contactForm) {
+            // Listen for form submission via Formspree
             contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Get form data
-                const formData = {
-                    name: document.getElementById('name').value,
-                    email: document.getElementById('email').value,
-                    subject: document.getElementById('subject').value,
-                    book: document.getElementById('book').value,
-                    message: document.getElementById('message').value,
-                    timestamp: new Date().toISOString()
-                };
-                
-                // In a real implementation, you would send this to a backend
-                console.log('Form submitted:', formData);
-                
-                // Show success message
-                showSuccessMessage();
-                
-                // Reset form
-                contactForm.reset();
+                // Show loading state
+                const submitBtn = contactForm.querySelector('.btn-submit');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<span>⏳</span> भेज रहे हैं...';
+                submitBtn.disabled = true;
             });
         }
-        
-        function showSuccessMessage() {
-            const successDiv = document.createElement('div');
-            successDiv.className = 'success-message';
-            successDiv.innerHTML = `
-                <div class="success-content">
-                    <span class="success-icon">✅</span>
-                    <h3>धन्यवाद!</h3>
-                    <p>आपका संदेश सफलतापूर्वक प्राप्त हुआ। हम शीघ्र ही आपसे सम्पर्क करेंगे।</p>
-                    <button class="btn btn-primary" onclick="this.parentElement.parentElement.remove()">बंद करें</button>
-                </div>
-            `;
-            successDiv.style.cssText = `
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: rgba(0, 0, 0, 0.7);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                z-index: 10000;
-                animation: fadeIn 0.3s ease;
-            `;
-            
-            document.body.appendChild(successDiv);
-        }
-        
-        // Add fade in animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes fadeIn {
-                from { opacity: 0; }
-                to { opacity: 1; }
-            }
-            
-            .success-content {
-                background: white;
-                padding: 3rem;
-                border-radius: 1rem;
-                text-align: center;
-                max-width: 500px;
-                animation: slideUp 0.3s ease;
-            }
-            
-            @keyframes slideUp {
-                from {
-                    transform: translateY(50px);
-                    opacity: 0;
-                }
-                to {
-                    transform: translateY(0);
-                    opacity: 1;
-                }
-            }
-            
-            .success-icon {
-                font-size: 4rem;
-                display: block;
-                margin-bottom: 1rem;
-            }
-            
-            .success-content h3 {
-                font-family: var(--font-hindi);
-                color: var(--color-deep-red);
-                font-size: 2rem;
-                margin-bottom: 1rem;
-            }
-            
-            .success-content p {
-                margin-bottom: 2rem;
-                line-height: 1.8;
-            }
-        `;
-        document.head.appendChild(style);
     </script>
     
     <style>
