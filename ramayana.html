@@ -67,7 +67,7 @@
     
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>ॐ</text></svg>">
 </head>
-<body class="reader-page">
+<body class="reader-page" data-pdf-src="HindiRamayana/book.pdf">
     <!-- Sticky Header -->
     <header class="site-header">
         <nav class="nav-container">
@@ -113,8 +113,8 @@
                     <p><strong>प्रकाशक:</strong> पाथेय प्रकाशन, जबलपुर म.प्र.</p>
                 </div>
                 <div class="book-actions-large">
-                    <a href="HindiRamayana/book.pdf" class="btn btn-primary" download>
-                        <span>⬇</span> पूर्ण पुस्तक PDF डाउनलोड करें
+                    <a href="#pdf-reader" class="btn btn-primary">
+                        <span>📖</span> पुस्तक पढ़ें
                     </a>
                     <button class="btn btn-secondary" onclick="window.print()">
                         <span>🖨️</span> प्रिंट करें
@@ -124,23 +124,34 @@
         </div>
     </section>
 
-    <!-- Reading Content -->
-    <section class="reading-content" id="reading-area">
-        <div class="content-container">
-            <div class="pdf-viewer-message">
-                <div class="message-content">
-                    <span class="om-large">ॐ</span>
-                    <h2>पूर्ण ग्रन्थ पढ़ने के लिए</h2>
-                    <p>कृपया PDF डाउनलोड करें या नीचे दिए गए बटन से पुस्तक खोलें</p>
-                    <div class="message-actions">
-                        <a href="HindiRamayana/book.pdf" class="btn btn-primary" target="_blank">
-                            <span>📖</span> PDF में पढ़ें
-                        </a>
-                        <a href="HindiRamayana/book.pdf" class="btn btn-secondary" download>
-                            <span>⬇</span> डाउनलोड करें
-                        </a>
+    <!-- PDF Reader Section -->
+    <section id="pdf-reader" class="pdf-reader-section">
+        <div class="pdf-reader-container">
+            <div class="pdf-reader-header">
+                <h2 class="pdf-reader-title">पुस्तक पढ़ें (दो पृष्ठ एक साथ)</h2>
+                <p class="pdf-reader-note">यह PDF दो पृष्ठों के एक साथ (spread) स्वरूप में है। नीचे दिए गए नियंत्रणों से पृष्ठ बदलें, ज़ूम करें या पूरी चौड़ाई में देखें।</p>
+            </div>
+            <div class="pdf-reader-toolbar">
+                <button id="pdf-prev" class="pdf-toolbar-btn" aria-label="पिछला पृष्ठ">⏪</button>
+                <span id="pdf-page-info" class="pdf-page-info">Page <input id="pdf-page-input" type="number" min="1" value="1"> / <span id="pdf-page-count">--</span></span>
+                <button id="pdf-next" class="pdf-toolbar-btn" aria-label="अगला पृष्ठ">⏩</button>
+                <button id="pdf-zoom-in" class="pdf-toolbar-btn" aria-label="ज़ूम इन">+</button>
+                <button id="pdf-zoom-out" class="pdf-toolbar-btn" aria-label="ज़ूम आउट">−</button>
+                <button id="pdf-fit-width" class="pdf-toolbar-btn" aria-label="पूरी चौड़ाई">↔</button>
+                <button id="pdf-fullscreen" class="pdf-toolbar-btn" aria-label="फुल स्क्रीन">⛶</button>
+            </div>
+            <div class="pdf-canvas-wrapper">
+                <div id="pdf-loader" class="pdf-loader-overlay">
+                    <div class="pdf-loader-animation">
+                        <span class="pdf-loader-swastika" aria-hidden="true">
+                            <img src="HinduSwastika.svg" alt="" role="presentation" />
+                        </span>
+                        <div class="pdf-loader-spinner"></div>
+                        <div class="pdf-loader-shimmer"></div>
+                        <p class="pdf-loader-text">पुस्तक लोड हो रही है...</p>
                     </div>
                 </div>
+                <canvas id="pdf-canvas" class="pdf-canvas-spread"></canvas>
             </div>
         </div>
     </section>
@@ -211,6 +222,6 @@
     </footer>
 
     <script src="script.js"></script>
-    <script src="reader.js"></script>
+    <script type="module" src="pdf-reader.js"></script>
 </body>
 </html>

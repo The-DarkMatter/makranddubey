@@ -113,8 +113,8 @@
                     <p><strong>प्रकाशक:</strong> पाथेय प्रकाशन, जबलपुर म.प्र.</p>
                 </div>
                 <div class="book-actions-large">
-                    <a href="HindiGeeta/book.pdf" class="btn btn-primary" download>
-                        <span>⬇</span> पूर्ण पुस्तक PDF डाउनलोड करें
+                    <a href="#pdf-reader" class="btn btn-primary">
+                        <span>📖</span> पुस्तक पढ़ें
                     </a>
                     <a href="geeta-videos.html" class="btn btn-secondary">
                         <span>▶</span> वीडियो प्रवचन देखें
@@ -127,62 +127,34 @@
         </div>
     </section>
 
-    <!-- Content Preview Section -->
-    <section class="content-preview">
-        <div class="content-container">
-            <div class="preview-message">
-                <span class="om-large">ॐ</span>
-                <h2>ग्रन्थ का संक्षिप्त परिचय</h2>
-                <p class="intro-text">
-                    यह संस्करण मूल संस्कृत श्लोकों के साथ सरल हिन्दी छन्दों में अनुवाद प्रस्तुत करता है। 
-                    प्रत्येक पृष्ठ पर बाएँ ओर मूल संस्कृत पाठ और दाएँ ओर हिन्दी अनुवाद दिया गया है।
-                </p>
-                
-                <div class="chapters-info">
-                    <h3>अध्याय सूची</h3>
-                    <div class="chapter-list">
-                        <div class="chapter-item">१. अर्जुन विषाद योग</div>
-                        <div class="chapter-item">२. सांख्य योग</div>
-                        <div class="chapter-item">३. कर्म योग</div>
-                        <div class="chapter-item">४. ज्ञान-कर्म-सन्न्यास योग</div>
-                        <div class="chapter-item">५. कर्म-सन्न्यास योग</div>
-                        <div class="chapter-item">६. आत्म-संयम योग</div>
-                        <div class="chapter-item">७. ज्ञान विज्ञान योग</div>
-                        <div class="chapter-item">८. अक्षर ब्रह्म योग</div>
-                        <div class="chapter-item">९. राजविद्या योग</div>
-                        <div class="chapter-item">१०. विभूति योग</div>
-                        <div class="chapter-item">११. विश्वरूप दर्शन योग</div>
-                        <div class="chapter-item">१२. भक्ति योग</div>
-                        <div class="chapter-item">१३. क्षेत्र-क्षेत्रज्ञ विभाग योग</div>
-                        <div class="chapter-item">१४. गुणत्रय विभाग योग</div>
-                        <div class="chapter-item">१५. पुरुषोत्तम योग</div>
-                        <div class="chapter-item">१६. दैवासुर सम्पदा विभाग योग</div>
-                        <div class="chapter-item">१७. श्रद्धा त्रय विभाग योग</div>
-                        <div class="chapter-item">१८. मोक्ष संन्यास योग</div>
+    <!-- PDF Reader Section -->
+    <section id="pdf-reader" class="pdf-reader-section">
+        <div class="pdf-reader-container">
+            <div class="pdf-reader-header">
+                <h2 class="pdf-reader-title">पुस्तक पढ़ें (दो पृष्ठ एक साथ)</h2>
+                <p class="pdf-reader-note">यह PDF दो पृष्ठों के एक साथ (spread) स्वरूप में है। नीचे दिए गए नियंत्रणों से पृष्ठ बदलें, ज़ूम करें या पूरी चौड़ाई में देखें।</p>
+            </div>
+            <div class="pdf-reader-toolbar">
+                <button id="pdf-prev" class="pdf-toolbar-btn" aria-label="पिछला पृष्ठ">⏪</button>
+                <span id="pdf-page-info" class="pdf-page-info">Page <input id="pdf-page-input" type="number" min="1" value="1"> / <span id="pdf-page-count">--</span></span>
+                <button id="pdf-next" class="pdf-toolbar-btn" aria-label="अगला पृष्ठ">⏩</button>
+                <button id="pdf-zoom-in" class="pdf-toolbar-btn" aria-label="ज़ूम इन">+</button>
+                <button id="pdf-zoom-out" class="pdf-toolbar-btn" aria-label="ज़ूम आउट">−</button>
+                <button id="pdf-fit-width" class="pdf-toolbar-btn" aria-label="पूरी चौड़ाई">↔</button>
+                <button id="pdf-fullscreen" class="pdf-toolbar-btn" aria-label="फुल स्क्रीन">⛶</button>
+            </div>
+            <div class="pdf-canvas-wrapper">
+                <div id="pdf-loader" class="pdf-loader-overlay">
+                    <div class="pdf-loader-animation">
+                        <span class="pdf-loader-swastika" aria-hidden="true">
+                            <img src="HinduSwastika.svg" alt="" role="presentation" />
+                        </span>
+                        <div class="pdf-loader-spinner"></div>
+                        <div class="pdf-loader-shimmer"></div>
+                        <p class="pdf-loader-text">पुस्तक लोड हो रही है...</p>
                     </div>
                 </div>
-
-                <div class="sample-preview">
-                    <h3>पृष्ठ का नमूना</h3>
-                    <p class="sample-description">पुस्तक में प्रत्येक पृष्ठ पर दो स्तम्भ हैं - बाएँ में संस्कृत और दाएँ में हिन्दी अनुवाद</p>
-                    <div class="verse-container dual-column">
-                        <div class="sanskrit-text">
-                            <p class="verse-number">श्लोक 1</p>
-                            <p class="verse-sanskrit">
-                                धृतराष्ट्र उवाच।<br>
-                                धर्मक्षेत्रे कुरुक्षेत्रे समवेता युयुत्सवः।<br>
-                                मामकाः पाण्डवाश्चैव किमकुर्वत सञ्जय ।।१।।
-                            </p>
-                        </div>
-                        <div class="hindi-text">
-                            <p class="verse-number">हिन्दी अनुवाद</p>
-                            <p class="verse-hindi">
-                                संजय से धृतराष्ट्र पूछते, एकत्रित युद्ध के लिए।<br>
-                                धर्मधरा कुरु भू में, क्या पाण्डव, क्या मेरे पुत्र किए? ।।१।।
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <canvas id="pdf-canvas" class="pdf-canvas-spread"></canvas>
             </div>
         </div>
     </section>
@@ -254,5 +226,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script type="module" src="pdf-reader.js"></script>
 </body>
 </html>

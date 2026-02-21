@@ -15,7 +15,7 @@
     <meta property="og:url" content="https://makranddubey.com/bhagwat.html">
     <meta property="og:title" content="हिन्दी भागवत — श्रीमद्भागवत पुराण का हिन्दी अनुवाद">
     <meta property="og:description" content="12 स्कन्ध, 18000 श्लोक। मूल संस्कृत श्लोकों सहित सरल हिन्दी अनुवाद। निःशुल्क PDF डाउनलोड।">
-    <meta property="og:image" content="https://makranddubey.com/HindiBhagwat/Cover.jpg">
+    <meta property="og:image" content="https://makranddubey.com/HindiBhagwat/Cover.jpeg">
     <meta property="og:locale" content="hi_IN">
     <meta property="og:site_name" content="हिन्दी धार्मिक ग्रन्थ">
     <meta property="book:author" content="पं. गोविन्द मकरन्द दुबे">
@@ -24,7 +24,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="हिन्दी भागवत — श्रीमद्भागवत पुराण हिन्दी अनुवाद">
     <meta name="twitter:description" content="12 स्कन्ध, 18000 श्लोक। मूल संस्कृत सहित हिन्दी अनुवाद। निःशुल्क PDF।">
-    <meta name="twitter:image" content="https://makranddubey.com/HindiBhagwat/Cover.jpg">
+    <meta name="twitter:image" content="https://makranddubey.com/HindiBhagwat/Cover.jpeg">
     
     <!-- JSON-LD -->
     <script type="application/ld+json">
@@ -54,7 +54,7 @@
             "address": { "@type": "PostalAddress", "addressLocality": "जबलपुर", "addressRegion": "मध्य प्रदेश", "addressCountry": "IN" }
         },
         "url": "https://makranddubey.com/bhagwat.html",
-        "image": "https://makranddubey.com/HindiBhagwat/Cover.jpg",
+        "image": "https://makranddubey.com/HindiBhagwat/Cover.jpeg",
         "isAccessibleForFree": true
     }
     </script>
@@ -68,7 +68,7 @@
     
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>ॐ</text></svg>">
 </head>
-<body class="reader-page">
+<body class="reader-page" data-pdf-src="HindiBhagwat/book.pdf">
     <!-- Sticky Header -->
     <header class="site-header">
         <nav class="nav-container">
@@ -94,7 +94,7 @@
     <section class="book-header">
         <div class="book-header-content">
             <div class="book-cover-display">
-                <img src="HindiBhagwat/Cover.jpg" alt="हिन्दी भागवत पुस्तक आवरण" class="book-cover-large" fetchpriority="high">
+                <img src="HindiBhagwat/Cover.jpeg" alt="हिन्दी भागवत पुस्तक आवरण" class="book-cover-large" fetchpriority="high">
             </div>
             <div class="book-details-display">
                 <h1 class="book-main-title">श्रीमद्भागवत पुराण</h1>
@@ -114,8 +114,8 @@
                     <p><strong>प्रकाशक:</strong> पाथेय प्रकाशन, जबलपुर म.प्र.</p>
                 </div>
                 <div class="book-actions-large">
-                    <a href="HindiBhagwat/book.pdf" class="btn btn-primary" download>
-                        <span>⬇</span> पूर्ण पुस्तक PDF डाउनलोड करें
+                    <a href="#pdf-reader" class="btn btn-primary">
+                        <span>📖</span> पुस्तक पढ़ें
                     </a>
                     <button class="btn btn-secondary" onclick="window.print()">
                         <span>🖨️</span> प्रिंट करें
@@ -125,23 +125,34 @@
         </div>
     </section>
 
-    <!-- Reading Content -->
-    <section class="reading-content" id="reading-area">
-        <div class="content-container">
-            <div class="pdf-viewer-message">
-                <div class="message-content">
-                    <span class="om-large">ॐ</span>
-                    <h2>पूर्ण ग्रन्थ पढ़ने के लिए</h2>
-                    <p>कृपया PDF डाउनलोड करें या नीचे दिए गए बटन से पुस्तक खोलें</p>
-                    <div class="message-actions">
-                        <a href="HindiBhagwat/book.pdf" class="btn btn-primary" target="_blank">
-                            <span>📖</span> PDF में पढ़ें
-                        </a>
-                        <a href="HindiBhagwat/book.pdf" class="btn btn-secondary" download>
-                            <span>⬇</span> डाउनलोड करें
-                        </a>
+    <!-- PDF Reader Section -->
+    <section id="pdf-reader" class="pdf-reader-section">
+        <div class="pdf-reader-container">
+            <div class="pdf-reader-header">
+                <h2 class="pdf-reader-title">पुस्तक पढ़ें (दो पृष्ठ एक साथ)</h2>
+                <p class="pdf-reader-note">यह PDF दो पृष्ठों के एक साथ (spread) स्वरूप में है। नीचे दिए गए नियंत्रणों से पृष्ठ बदलें, ज़ूम करें या पूरी चौड़ाई में देखें।</p>
+            </div>
+            <div class="pdf-reader-toolbar">
+                <button id="pdf-prev" class="pdf-toolbar-btn" aria-label="पिछला पृष्ठ">⏪</button>
+                <span id="pdf-page-info" class="pdf-page-info">Page <input id="pdf-page-input" type="number" min="1" value="1"> / <span id="pdf-page-count">--</span></span>
+                <button id="pdf-next" class="pdf-toolbar-btn" aria-label="अगला पृष्ठ">⏩</button>
+                <button id="pdf-zoom-in" class="pdf-toolbar-btn" aria-label="ज़ूम इन">+</button>
+                <button id="pdf-zoom-out" class="pdf-toolbar-btn" aria-label="ज़ूम आउट">−</button>
+                <button id="pdf-fit-width" class="pdf-toolbar-btn" aria-label="पूरी चौड़ाई">↔</button>
+                <button id="pdf-fullscreen" class="pdf-toolbar-btn" aria-label="फुल स्क्रीन">⛶</button>
+            </div>
+            <div class="pdf-canvas-wrapper">
+                <div id="pdf-loader" class="pdf-loader-overlay">
+                    <div class="pdf-loader-animation">
+                        <span class="pdf-loader-swastika" aria-hidden="true">
+                            <img src="HinduSwastika.svg" alt="" role="presentation" />
+                        </span>
+                        <div class="pdf-loader-spinner"></div>
+                        <div class="pdf-loader-shimmer"></div>
+                        <p class="pdf-loader-text">पुस्तक लोड हो रही है...</p>
                     </div>
                 </div>
+                <canvas id="pdf-canvas" class="pdf-canvas-spread"></canvas>
             </div>
         </div>
     </section>
@@ -212,6 +223,6 @@
     </footer>
 
     <script src="script.js"></script>
-    <script src="reader.js"></script>
+    <script type="module" src="pdf-reader.js"></script>
 </body>
 </html>
