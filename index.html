@@ -480,6 +480,13 @@
     </footer>
 
     <!-- JavaScript -->
+    <script>
+        if (/\/index\.html$/i.test(window.location.pathname)) {
+            const cleanPath = window.location.pathname.replace(/\/index\.html$/i, '/');
+            const cleanUrl = `${window.location.origin}${cleanPath}${window.location.search}${window.location.hash}`;
+            window.history.replaceState(null, document.title, cleanUrl);
+        }
+    </script>
     <script src="translations.js"></script>
     <script src="verses.js"></script>
     <script src="script.js"></script>
