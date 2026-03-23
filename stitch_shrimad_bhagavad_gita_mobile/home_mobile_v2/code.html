@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html class="light" lang="hi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Noto+Sans+Devanagari:wght@300;400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;family=Work+Sans:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Be Vietnam Pro', 'Noto Sans Devanagari', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .devanagari-high-legibility {
+            line-height: 1.8;
+            letter-spacing: 0.02em;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "tertiary-container": "#3e78bd",
+                "on-error-container": "#93000a",
+                "inverse-on-surface": "#fbefe0",
+                "secondary-container": "#fd907a",
+                "secondary": "#9b4333",
+                "primary-fixed": "#ffdad5",
+                "outline-variant": "#dec0bb",
+                "inverse-surface": "#363026",
+                "surface": "#fff8f3",
+                "surface-variant": "#ede1d2",
+                "secondary-fixed": "#ffdad3",
+                "inverse-primary": "#ffb4a8",
+                "primary-fixed-dim": "#ffb4a8",
+                "on-primary-fixed-variant": "#852319",
+                "on-error": "#ffffff",
+                "tertiary-fixed": "#d4e3ff",
+                "surface-container-lowest": "#ffffff",
+                "on-tertiary-fixed": "#001c39",
+                "on-secondary-container": "#752719",
+                "on-primary-fixed": "#410000",
+                "surface-tint": "#a53a2d",
+                "primary-container": "#c45142",
+                "tertiary-fixed-dim": "#a4c9ff",
+                "surface-bright": "#fff8f3",
+                "primary": "#a3392c",
+                "on-primary-container": "#fffeff",
+                "on-secondary-fixed": "#3f0400",
+                "surface-container-low": "#fef2e3",
+                "on-primary": "#ffffff",
+                "background": "#fff8f3",
+                "on-background": "#201b12",
+                "surface-container": "#f8ecdd",
+                "secondary-fixed-dim": "#ffb4a5",
+                "on-secondary": "#ffffff",
+                "on-tertiary-fixed-variant": "#004883",
+                "on-surface": "#201b12",
+                "tertiary": "#1d5fa2",
+                "surface-container-high": "#f2e6d8",
+                "outline": "#8a716d",
+                "error-container": "#ffdad6",
+                "surface-container-highest": "#ede1d2",
+                "on-tertiary-container": "#ffffff",
+                "on-tertiary": "#ffffff",
+                "on-surface-variant": "#57423e",
+                "error": "#ba1a1a",
+                "surface-dim": "#e4d8ca",
+                "on-secondary-fixed-variant": "#7c2d1e"
+              },
+              fontFamily: {
+                "headline": ["Plus Jakarta Sans"],
+                "body": ["Be Vietnam Pro"],
+                "label": ["Work Sans"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="bg-[#fff8f3] dark:bg-stone-950 docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center px-6 h-16 w-full max-w-screen-xl mx-auto">
+<button class="text-[#a3392c] dark:text-[#c45142] hover:bg-[#fef2e3] dark:hover:bg-stone-800 transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-xl font-bold text-[#a3392c] dark:text-[#c45142] font-['Noto_Sans_Devanagari'] leading-[1.6] tracking-wide">
+                पंडित गोविंद मकरंद दुबे
+            </h1>
+<button class="text-[#a3392c] dark:text-[#c45142] hover:bg-[#fef2e3] dark:hover:bg-stone-800 transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<main class="max-w-screen-xl mx-auto px-6 pt-6">
+<!-- Hero Section: Author Portrait -->
+<section class="relative mb-10 overflow-hidden rounded-3xl bg-surface-container-low">
+<div class="flex flex-col md:flex-row items-center gap-8 p-8">
+<div class="w-40 h-40 md:w-56 md:h-56 rounded-full border-4 border-surface-container-highest overflow-hidden shadow-xl shrink-0">
+<img alt="पंडित गोविंद मकरंद दुबे" class="w-full h-full object-cover" data-alt="Dignified portrait of an elderly scholar with traditional attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgvZ_gz0W6uQr4-k2vNXFKJmh3dRo_80Dxf87r7d2HakmbobekHWA5UXvU1PkKqOeLgEOPhyIrftJPXanyhKgiM6_yw6xSYPkHjD6Cjmi7tRJqo8yLxiKKj3f3WgP_jrfYJaBpHFtQMP4rWo8pmqmYlYw82gXvV2ZZ-4dAuAGbUIxAJb5NMeZfkSrXaZw4QFBpM084KyW0fEWlFo8TkP81JMnVZEkUUhp3WayyJzuR_5XmEVEz4UvVgiU1UcEGDwSrBnv3pwYHbYE"/>
+</div>
+<div class="text-center md:text-left">
+<span class="font-label text-sm uppercase tracking-widest text-secondary mb-2 block">सुस्वागतम्</span>
+<h2 class="font-headline text-3xl md:text-5xl font-extrabold text-on-surface mb-4 leading-tight">
+                        साहित्य और संस्कृति का संगम
+                    </h2>
+<p class="font-body text-on-surface-variant max-w-md devanagari-high-legibility">
+                        विद्वान एवं लेखक पंडित गोविंद मकरंद दुबे के डिजिटल पुस्तकालय में आपका स्वागत है, जहाँ ज्ञान और आध्यात्मिकता का संगम होता है।
+                    </p>
+</div>
+</div>
+<!-- Decorative Ornament -->
+<div class="absolute -right-10 -bottom-10 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-[200px]" data-icon="auto_stories">auto_stories</span>
+</div>
+</section>
+<!-- Daily Shloka Section -->
+<section class="mb-10">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline text-xl font-bold border-l-4 border-primary pl-4">दैनिक श्लोक</h3>
+<span class="font-label text-xs text-secondary bg-secondary-fixed px-3 py-1 rounded-full">२० अक्टूबर २०२३</span>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-3xl relative overflow-hidden border border-outline-variant/15">
+<div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-primary to-secondary"></div>
+<div class="space-y-6 text-center">
+<blockquote class="font-['Noto_Sans_Devanagari'] text-2xl font-semibold text-primary leading-relaxed italic">
+                        "ॐ असतो मा सद्गमय ।<br/>तमसो मा ज्योतिर्गमय ।<br/>मृत्योर्मा अमृतं गमय ॥"
+                    </blockquote>
+<div class="w-12 h-px bg-outline-variant mx-auto"></div>
+<p class="font-body text-on-surface-variant devanagari-high-legibility text-lg leading-relaxed px-4">
+                        हे ईश्वर, हमें असत्य से सत्य की ओर ले चलें। अंधकार से प्रकाश की ओर ले चलें। मृत्यु से अमरता की ओर ले चलें।
+                    </p>
+</div>
+</div>
+</section>
+<!-- Quick Links Bento Grid -->
+<section class="mb-12">
+<h3 class="font-headline text-xl font-bold mb-6">त्वरित मार्गदर्शिका</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Legal Manual -->
+<div class="group bg-surface-container p-6 rounded-2xl hover:bg-primary-fixed-dim/20 transition-all duration-300 cursor-pointer flex flex-col justify-between h-48">
+<div class="flex justify-between items-start">
+<div class="bg-surface-container-lowest p-3 rounded-xl text-primary shadow-sm">
+<span class="material-symbols-outlined text-3xl" data-icon="gavel">gavel</span>
+</div>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity text-primary" data-icon="arrow_outward">arrow_outward</span>
+</div>
+<div>
+<h4 class="font-headline text-lg font-bold text-on-surface">Legal Manual</h4>
+<p class="font-body text-sm text-on-surface-variant">विधि साहित्य और नियम</p>
+</div>
+</div>
+<!-- Sanskrit Library -->
+<div class="group bg-surface-container-high p-6 rounded-2xl hover:bg-primary-fixed-dim/20 transition-all duration-300 cursor-pointer flex flex-col justify-between h-48">
+<div class="flex justify-between items-start">
+<div class="bg-surface-container-lowest p-3 rounded-xl text-primary shadow-sm">
+<span class="material-symbols-outlined text-3xl" data-icon="menu_book">menu_book</span>
+</div>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity text-primary" data-icon="arrow_outward">arrow_outward</span>
+</div>
+<div>
+<h4 class="font-headline text-lg font-bold text-on-surface">Sanskrit Library</h4>
+<p class="font-body text-sm text-on-surface-variant">प्राचीन संस्कृत ग्रंथ संग्रह</p>
+</div>
+</div>
+<!-- Video Discourses -->
+<div class="group bg-surface-container-highest p-6 rounded-2xl hover:bg-primary-fixed-dim/20 transition-all duration-300 cursor-pointer flex flex-col justify-between h-48">
+<div class="flex justify-between items-start">
+<div class="bg-surface-container-lowest p-3 rounded-xl text-primary shadow-sm">
+<span class="material-symbols-outlined text-3xl" data-icon="play_circle">play_circle</span>
+</div>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity text-primary" data-icon="arrow_outward">arrow_outward</span>
+</div>
+<div>
+<h4 class="font-headline text-lg font-bold text-on-surface">Video Discourses</h4>
+<p class="font-body text-sm text-on-surface-variant">प्रवचन और वीडियो व्याख्यान</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Content Card: Recent Publication -->
+<section class="mb-12">
+<div class="bg-inverse-surface text-inverse-on-surface rounded-3xl overflow-hidden flex flex-col md:flex-row shadow-2xl">
+<div class="md:w-1/2 h-64 md:h-auto overflow-hidden">
+<img alt="Manuscript" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="Ancient manuscript page with elegant script and warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSGnIMqB_6iAJr69Y-JlELtEvDdWkasPy8_PGHIqpDUIUNY4pPDmI6Jshg9C0NE4Ljlne76ygVTHOkvrInNCUaes9OozfkxV2wUD_-FN6Rbym3CCKnuKDsg8ESbvDot3NTTAlen-hVVJ33tET4nt5uu9zRyE5R0yAk7Y32TyDlWNM0stW7w5rhkDq8OzuawVbAWALxR5Wt7gz7Nhd8bvec0U8TKTYwV4LEp8VG5BNoIunO23KRH3VYNBf4X70qlt8vnEE3D6Tj5jQ"/>
+</div>
+<div class="p-8 md:w-1/2 flex flex-col justify-center">
+<span class="text-secondary-fixed font-label text-xs tracking-widest mb-2 block uppercase">नवीनतम प्रकाशन</span>
+<h3 class="font-headline text-2xl font-bold mb-4 leading-tight">धर्म और न्याय: एक विश्लेषण</h3>
+<p class="font-body text-surface-variant mb-6 text-sm leading-relaxed">
+                        पंडित जी की नई पुस्तक अब उपलब्ध है। इस कृति में धर्मशास्त्र और आधुनिक न्यायशास्त्र के बीच के सेतु को विस्तार से समझाया गया है।
+                    </p>
+<button class="bg-primary hover:bg-primary-container text-on-primary font-label px-6 py-3 rounded-xl w-fit transition-colors flex items-center gap-2 group">
+                        अभी पढ़ें
+                        <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-20 flex justify-around items-center px-4 pb-safe bg-[#fff8f3]/85 dark:bg-stone-950/85 backdrop-blur-md z-50 rounded-t-2xl shadow-[0_-4px_24px_rgba(32,27,18,0.06)] border-t border-[#201b12]/15 dark:border-stone-800">
+<!-- Home Active -->
+<a class="flex flex-col items-center justify-center bg-[#fef2e3] dark:bg-[#a3392c]/20 text-[#a3392c] dark:text-[#fef2e3] rounded-xl px-4 py-1 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Noto_Sans_Devanagari'] text-xs font-medium mt-1">मुख्य</span>
+</a>
+<!-- Library Inactive -->
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-4 py-1 hover:text-[#a3392c] dark:hover:text-[#c45142] active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-['Noto_Sans_Devanagari'] text-xs font-medium mt-1">पुस्तकालय</span>
+</a>
+<!-- Discourses Inactive -->
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-4 py-1 hover:text-[#a3392c] dark:hover:text-[#c45142] active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="play_circle">play_circle</span>
+<span class="font-['Noto_Sans_Devanagari'] text-xs font-medium mt-1">प्रवचन</span>
+</a>
+<!-- Profile Inactive -->
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-4 py-1 hover:text-[#a3392c] dark:hover:text-[#c45142] active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Noto_Sans_Devanagari'] text-xs font-medium mt-1">प्रोफ़ाइल</span>
+</a>
+</nav>
+</body></html>

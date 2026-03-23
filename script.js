@@ -1,43 +1,38 @@
 // ========================================
-// Mobile Navigation Toggle
+// Mobile Navigation Toggle (new structure)
 // ========================================
 const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-const navMenu = document.querySelector('.nav-menu');
+const navMenuMobile = document.querySelector('.nav-menu-mobile');
+const navMenuDesktop = document.querySelector('ul.nav-menu');
 
 if (mobileMenuToggle) {
     mobileMenuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        const isExpanded = navMenu.classList.contains('active');
-        mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
-        
-        // Animate hamburger icon
+        const isOpen = navMenuMobile && !navMenuMobile.classList.contains('hidden');
+        if (navMenuMobile) {
+            navMenuMobile.classList.toggle('hidden');
+        }
+        const expanded = navMenuMobile && !navMenuMobile.classList.contains('hidden');
+        mobileMenuToggle.setAttribute('aria-expanded', expanded);
+
+        // Animate hamburger
         const spans = mobileMenuToggle.querySelectorAll('span');
-        if (isExpanded) {
+        if (expanded) {
             spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
             spans[1].style.opacity = '0';
             spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
         } else {
-            spans.forEach(span => {
-                span.style.transform = '';
-                span.style.opacity = '';
-            });
+            spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
         }
     });
 }
 
-// Close mobile menu when clicking on a link
-const navLinks = document.querySelectorAll('.nav-link');
-navLinks.forEach(link => {
+// Close mobile menu on link click
+document.querySelectorAll('.nav-menu-mobile .nav-link, .nav-menu-mobile .lang-toggle-btn').forEach(link => {
     link.addEventListener('click', () => {
-        if (window.innerWidth <= 768) {
-            navMenu.classList.remove('active');
-            mobileMenuToggle.setAttribute('aria-expanded', 'false');
-            const spans = mobileMenuToggle.querySelectorAll('span');
-            spans.forEach(span => {
-                span.style.transform = '';
-                span.style.opacity = '';
-            });
-        }
+        if (navMenuMobile) navMenuMobile.classList.add('hidden');
+        mobileMenuToggle?.setAttribute('aria-expanded', 'false');
+        const spans = mobileMenuToggle?.querySelectorAll('span');
+        if (spans) spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
     });
 });
 
@@ -48,46 +43,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
         if (href === '#') return;
-        
         e.preventDefault();
         const target = document.querySelector(href);
         if (target) {
-            const headerOffset = 80;
+            const headerOffset = 70;
             const elementPosition = target.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+            // Close mobile menu if open
+            if (navMenuMobile && !navMenuMobile.classList.contains('hidden')) {
+                navMenuMobile.classList.add('hidden');
+                mobileMenuToggle?.setAttribute('aria-expanded', 'false');
+            }
         }
     });
 });
-
-// ========================================
-// Active Navigation Highlight on Scroll
-// ========================================
-function updateActiveNav() {
-    const sections = document.querySelectorAll('section[id]');
-    const scrollPosition = window.scrollY + 100;
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        const sectionId = section.getAttribute('id');
-        
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${sectionId}`) {
-                    link.classList.add('active');
-                }
-            });
-        }
-    });
-}
-
-window.addEventListener('scroll', updateActiveNav);
 
 // ========================================
 // Header Hide/Show on Scroll
@@ -98,50 +68,64 @@ const scrollThreshold = 100;
 
 window.addEventListener('scroll', () => {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
     if (scrollTop > scrollThreshold) {
         if (scrollTop > lastScrollTop) {
-            // Scrolling down
             header.style.transform = 'translateY(-100%)';
         } else {
-            // Scrolling up
             header.style.transform = 'translateY(0)';
         }
     } else {
         header.style.transform = 'translateY(0)';
     }
-    
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-}, false);
+}, { passive: true });
 
 // ========================================
-// Book Card Interaction Enhancements
+// Bottom Navigation Active State
 // ========================================
-const bookCards = document.querySelectorAll('.book-card');
+function setupBottomNav() {
+    const bottomNav = document.getElementById('bottomNav');
+    if (!bottomNav) return;
 
-bookCards.forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        this.style.zIndex = '10';
+    const path = window.location.pathname;
+    const tabs = bottomNav.querySelectorAll('[data-nav]');
+
+    let activeTab = 'home';
+    if (path.includes('geeta-videos')) activeTab = 'videos';
+    else if (path.includes('contact')) activeTab = 'contact';
+    else if (path.includes('about')) activeTab = 'contact'; // fallback
+    else if (path.includes('geeta') || path.includes('bhagwat') || path.includes('ramayana')) activeTab = 'books';
+    else if (path === '/' || path.endsWith('index.html') || path === '') activeTab = 'home';
+
+    tabs.forEach(tab => {
+        const nav = tab.getAttribute('data-nav');
+        if (nav === activeTab) {
+            tab.classList.add('bg-saffron/10', 'text-deep-red');
+            tab.classList.remove('text-dark-brown/50');
+            tab.setAttribute('aria-current', 'page');
+            const icon = tab.querySelector('.material-symbols-outlined');
+            if (icon) icon.style.fontVariationSettings = "'FILL' 1";
+        } else {
+            tab.classList.remove('bg-saffron/10', 'text-deep-red');
+            tab.classList.add('text-dark-brown/50');
+            tab.removeAttribute('aria-current');
+            const icon = tab.querySelector('.material-symbols-outlined');
+            if (icon) icon.style.fontVariationSettings = "'FILL' 0";
+        }
     });
-    
-    card.addEventListener('mouseleave', function() {
-        this.style.zIndex = '1';
-    });
-});
+}
+setupBottomNav();
 
 // ========================================
-// Loading State for PDFs
+// Loading State for PDF downloads
 // ========================================
-const pdfLinks = document.querySelectorAll('a[href$=".pdf"]');
-
-pdfLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
+document.querySelectorAll('a[href$=".pdf"]').forEach(link => {
+    link.addEventListener('click', function () {
         const btn = this;
         if (!btn.classList.contains('loading')) {
             btn.classList.add('loading');
             const originalText = btn.innerHTML;
-            btn.innerHTML = '<span>⏳</span> डाउनलोड हो रहा है...';
-            
+            btn.innerHTML = '<span class="material-symbols-outlined text-lg animate-spin">hourglass_top</span> डाउनलोड हो रहा है...';
             setTimeout(() => {
                 btn.classList.remove('loading');
                 btn.innerHTML = originalText;
@@ -151,88 +135,52 @@ pdfLinks.forEach(link => {
 });
 
 // ========================================
-// Accessibility: Keyboard Navigation Enhancement
+// Accessibility: Escape closes mobile menu
 // ========================================
 document.addEventListener('keydown', (e) => {
-    // Focus trap in mobile menu when open
-    if (navMenu.classList.contains('active') && e.key === 'Escape') {
-        navMenu.classList.remove('active');
-        mobileMenuToggle.setAttribute('aria-expanded', 'false');
-        mobileMenuToggle.focus();
+    if (navMenuMobile && !navMenuMobile.classList.contains('hidden') && e.key === 'Escape') {
+        navMenuMobile.classList.add('hidden');
+        mobileMenuToggle?.setAttribute('aria-expanded', 'false');
+        mobileMenuToggle?.focus();
+        const spans = mobileMenuToggle?.querySelectorAll('span');
+        if (spans) spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
     }
 });
 
 // ========================================
-// Performance: Viewport-Aware Image Loading
+// Viewport-Aware Image Loading
 // ========================================
-// Use IntersectionObserver to preload images slightly before they enter the viewport
-(function() {
+(function () {
     if ('IntersectionObserver' in window) {
         const imgObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const img = entry.target;
-                    // If image has a data-src, swap it in (for deferred images)
                     if (img.dataset.src) {
                         img.src = img.dataset.src;
                         img.removeAttribute('data-src');
                     }
-                    // Mark as eager once it's near viewport
                     img.loading = 'eager';
                     imgObserver.unobserve(img);
                 }
             });
-        }, {
-            // Start loading 200px before the image enters the viewport
-            rootMargin: '200px 0px',
-            threshold: 0
-        });
-        
-        // Observe all lazy images
-        document.querySelectorAll('img[loading="lazy"]').forEach(img => {
-            imgObserver.observe(img);
-        });
-    } else {
-        // Fallback for browsers that don't support IntersectionObserver
-        const images = document.querySelectorAll('img[loading="lazy"]');
-        images.forEach(img => { img.loading = 'eager'; });
+        }, { rootMargin: '200px 0px', threshold: 0 });
+        document.querySelectorAll('img[loading="lazy"]').forEach(img => imgObserver.observe(img));
     }
 })();
 
 // ========================================
-// Analytics and User Engagement (Optional)
+// Analytics Placeholder
 // ========================================
 function trackBookInteraction(bookName, action) {
     console.log(`User ${action} on ${bookName}`);
-    // Add analytics tracking here if needed
-    // Example: gtag('event', action, { book: bookName });
 }
-
-document.querySelectorAll('.book-card').forEach(card => {
+document.querySelectorAll('.book-card, [data-book]').forEach(card => {
     const bookName = card.getAttribute('data-book');
-    
-    card.querySelector('.btn-primary')?.addEventListener('click', () => {
-        trackBookInteraction(bookName, 'opened_reader');
-    });
-    
-    card.querySelector('.btn-secondary')?.addEventListener('click', () => {
-        trackBookInteraction(bookName, 'downloaded_pdf');
-    });
+    if (!bookName) return;
+    card.querySelector('a[href$=".html"]')?.addEventListener('click', () => trackBookInteraction(bookName, 'opened_reader'));
+    card.querySelector('a[href$=".pdf"]')?.addEventListener('click', () => trackBookInteraction(bookName, 'downloaded_pdf'));
 });
-
-// ========================================
-// Print Functionality
-// ========================================
-function setupPrintButton() {
-    const printButtons = document.querySelectorAll('[data-print]');
-    printButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            window.print();
-        });
-    });
-}
-
-setupPrintButton();
 
 // ========================================
 // Featured Verse
@@ -242,12 +190,12 @@ function setupFeaturedVerse() {
     const hindiEl = document.getElementById('verse-hindi');
     const sourceEl = document.getElementById('verse-source');
     const refreshBtn = document.getElementById('verse-refresh');
-    
+
     if (!sanskritEl || !hindiEl || !sourceEl) return;
     if (typeof FEATURED_VERSES === 'undefined' || !FEATURED_VERSES.length) return;
-    
+
     let lastIndex = -1;
-    
+
     function showVerse(index) {
         const verse = FEATURED_VERSES[index];
         sanskritEl.textContent = verse.sanskrit;
@@ -255,24 +203,19 @@ function setupFeaturedVerse() {
         sourceEl.textContent = '— ' + verse.source;
         lastIndex = index;
     }
-    
+
     function showRandomVerse() {
         let index;
-        do {
-            index = Math.floor(Math.random() * FEATURED_VERSES.length);
-        } while (index === lastIndex && FEATURED_VERSES.length > 1);
+        do { index = Math.floor(Math.random() * FEATURED_VERSES.length); }
+        while (index === lastIndex && FEATURED_VERSES.length > 1);
         showVerse(index);
     }
-    
-    // Show a verse based on the day (so same verse throughout the day)
+
     const dayIndex = Math.floor(Date.now() / (1000 * 60 * 60 * 24)) % FEATURED_VERSES.length;
     showVerse(dayIndex);
-    
-    if (refreshBtn) {
-        refreshBtn.addEventListener('click', showRandomVerse);
-    }
-}
 
+    if (refreshBtn) refreshBtn.addEventListener('click', showRandomVerse);
+}
 setupFeaturedVerse();
 
 // ========================================
@@ -281,186 +224,42 @@ setupFeaturedVerse();
 function setupScrollReveal() {
     const revealElements = document.querySelectorAll('.scroll-reveal');
     if (!revealElements.length) return;
-    
+
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
-                // Stagger the reveal slightly
-                setTimeout(() => {
-                    entry.target.classList.add('revealed');
-                }, index * 100);
+                setTimeout(() => entry.target.classList.add('revealed'), index * 80);
                 revealObserver.unobserve(entry.target);
             }
         });
-    }, {
-        threshold: 0.15,
-        rootMargin: '0px 0px -40px 0px'
-    });
-    
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
     revealElements.forEach(el => revealObserver.observe(el));
 }
-
 setupScrollReveal();
-
-// ========================================
-// Books Carousel - Coverflow with DOM reorder
-// ========================================
-function setupCarousel() {
-    const carousel = document.querySelector('.books-carousel');
-    const prevBtn = document.querySelector('.carousel-prev');
-    const nextBtn = document.querySelector('.carousel-next');
-    const indicators = document.querySelectorAll('.indicator');
-    
-    if (!carousel) return;
-    
-    // Store original order: [geeta=0, bhagwat=1, ramayana=2]
-    const allCards = Array.from(carousel.querySelectorAll('.book-card'));
-    if (allCards.length < 3) return;
-    
-    let currentCenter = 0; // index of center card in allCards
-    
-    function render() {
-        const total = allCards.length;
-        const leftIdx = (currentCenter - 1 + total) % total;
-        const rightIdx = (currentCenter + 1) % total;
-        
-        // Clear carousel
-        while (carousel.firstChild) {
-            carousel.removeChild(carousel.firstChild);
-        }
-        
-        // Get the cards
-        const leftCard = allCards[leftIdx];
-        const centerCard = allCards[currentCenter];
-        const rightCard = allCards[rightIdx];
-        
-        // Remove old classes from ALL cards
-        allCards.forEach(c => c.classList.remove('center', 'side', 'carousel-animate'));
-        
-        // Prioritize center card image, lazy load side cards
-        const centerImg = centerCard.querySelector('.book-cover');
-        const leftImg = leftCard.querySelector('.book-cover');
-        const rightImg = rightCard.querySelector('.book-cover');
-        if (centerImg) {
-            centerImg.loading = 'eager';
-            centerImg.removeAttribute('fetchpriority');
-        }
-        if (leftImg) leftImg.loading = 'lazy';
-        if (rightImg) rightImg.loading = 'lazy';
-        
-        // Assign classes
-        leftCard.classList.add('side');
-        centerCard.classList.add('center');
-        rightCard.classList.add('side');
-        
-        // Append in visual order: left, center, right
-        carousel.appendChild(leftCard);
-        carousel.appendChild(centerCard);
-        carousel.appendChild(rightCard);
-        
-        // Trigger fade-in animation on center card
-        requestAnimationFrame(() => {
-            centerCard.classList.add('carousel-animate');
-        });
-        
-        // Update indicators
-        indicators.forEach((ind, i) => {
-            ind.classList.toggle('active', i === currentCenter);
-        });
-    }
-    
-    function goNext() {
-        currentCenter = (currentCenter + 1) % allCards.length;
-        render();
-    }
-    
-    function goPrev() {
-        currentCenter = (currentCenter - 1 + allCards.length) % allCards.length;
-        render();
-    }
-    
-    // Button handlers
-    if (nextBtn) nextBtn.addEventListener('click', goNext);
-    if (prevBtn) prevBtn.addEventListener('click', goPrev);
-    
-    // Indicator handlers
-    indicators.forEach((ind, i) => {
-        ind.addEventListener('click', () => {
-            currentCenter = i;
-            render();
-        });
-    });
-    
-    // Click side card to bring to center
-    allCards.forEach((card, i) => {
-        card.addEventListener('click', () => {
-            if (!card.classList.contains('center')) {
-                currentCenter = i;
-                render();
-            }
-        });
-    });
-    
-    // Keyboard
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') goPrev();
-        if (e.key === 'ArrowRight') goNext();
-    });
-    
-    // Touch swipe support for mobile
-    let touchStartX = 0;
-    let touchEndX = 0;
-    
-    carousel.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
-    
-    carousel.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        const swipeDistance = touchStartX - touchEndX;
-        if (Math.abs(swipeDistance) > 50) {
-            if (swipeDistance > 0) goNext();
-            else goPrev();
-        }
-    }, { passive: true });
-    
-    // Auto-play (pause on hover/touch)
-    let autoplayInterval = setInterval(goNext, 5000);
-    
-    carousel.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
-    carousel.addEventListener('mouseleave', () => {
-        autoplayInterval = setInterval(goNext, 5000);
-    });
-    carousel.addEventListener('touchstart', () => clearInterval(autoplayInterval), { passive: true });
-    
-    // Initialize
-    render();
-}
-
-setupCarousel();
 
 // ========================================
 // Back to Top Button
 // ========================================
-(function() {
+(function () {
     const backToTop = document.getElementById('backToTop');
     if (!backToTop) return;
-    
+
     let ticking = false;
     window.addEventListener('scroll', () => {
         if (!ticking) {
             requestAnimationFrame(() => {
                 if (window.scrollY > 400) {
-                    backToTop.classList.add('visible');
+                    backToTop.classList.add('!opacity-100', '!visible', '!translate-y-0');
                 } else {
-                    backToTop.classList.remove('visible');
+                    backToTop.classList.remove('!opacity-100', '!visible', '!translate-y-0');
                 }
                 ticking = false;
             });
             ticking = true;
         }
     }, { passive: true });
-    
+
     backToTop.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
@@ -474,16 +273,10 @@ document.querySelectorAll('.copy-link').forEach(btn => {
         try {
             await navigator.clipboard.writeText(window.location.href);
             const originalHTML = btn.innerHTML;
-            btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> कॉपी हुआ!';
-            btn.style.borderColor = 'rgba(37, 211, 102, 0.5)';
+            btn.innerHTML = '<span class="material-symbols-outlined text-sm">check</span> कॉपी हुआ!';
             btn.style.color = '#25D366';
-            setTimeout(() => {
-                btn.innerHTML = originalHTML;
-                btn.style.borderColor = '';
-                btn.style.color = '';
-            }, 2000);
+            setTimeout(() => { btn.innerHTML = originalHTML; btn.style.color = ''; }, 2000);
         } catch (err) {
-            // Fallback for older browsers
             const textarea = document.createElement('textarea');
             textarea.value = window.location.href;
             document.body.appendChild(textarea);
@@ -493,5 +286,25 @@ document.querySelectorAll('.copy-link').forEach(btn => {
         }
     });
 });
+
+// ========================================
+// Horizontal scroll indicator dots (books)
+// ========================================
+(function () {
+    const scrollContainer = document.querySelector('#books .scrollbar-hide');
+    const dots = document.querySelectorAll('#books .flex.justify-center span');
+    if (!scrollContainer || !dots.length) return;
+
+    scrollContainer.addEventListener('scroll', () => {
+        const scrollLeft = scrollContainer.scrollLeft;
+        const cardWidth = scrollContainer.firstElementChild?.offsetWidth || 300;
+        const gap = 20;
+        const index = Math.round(scrollLeft / (cardWidth + gap));
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('bg-saffron', i === index);
+            dot.classList.toggle('bg-saffron/30', i !== index);
+        });
+    }, { passive: true });
+})();
 
 console.log('🕉️ Website initialized successfully');

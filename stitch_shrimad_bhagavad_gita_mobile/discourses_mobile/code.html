@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html class="light" lang="hi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@100..900&amp;family=Plus+Jakarta+Sans:wght@200..800&amp;family=Be+Vietnam+Pro:wght@100..900&amp;family=Work+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-container": "#3e78bd",
+              "on-error-container": "#93000a",
+              "inverse-on-surface": "#fbefe0",
+              "secondary-container": "#fd907a",
+              "secondary": "#9b4333",
+              "primary-fixed": "#ffdad5",
+              "outline-variant": "#dec0bb",
+              "inverse-surface": "#363026",
+              "surface": "#fff8f3",
+              "surface-variant": "#ede1d2",
+              "secondary-fixed": "#ffdad3",
+              "inverse-primary": "#ffb4a8",
+              "primary-fixed-dim": "#ffb4a8",
+              "on-primary-fixed-variant": "#852319",
+              "on-error": "#ffffff",
+              "tertiary-fixed": "#d4e3ff",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed": "#001c39",
+              "on-secondary-container": "#752719",
+              "on-primary-fixed": "#410000",
+              "surface-tint": "#a53a2d",
+              "primary-container": "#c45142",
+              "tertiary-fixed-dim": "#a4c9ff",
+              "surface-bright": "#fff8f3",
+              "primary": "#a3392c",
+              "on-primary-container": "#fffeff",
+              "on-secondary-fixed": "#3f0400",
+              "surface-container-low": "#fef2e3",
+              "on-primary": "#ffffff",
+              "background": "#fff8f3",
+              "on-background": "#201b12",
+              "surface-container": "#f8ecdd",
+              "secondary-fixed-dim": "#ffb4a5",
+              "on-secondary": "#ffffff",
+              "on-tertiary-fixed-variant": "#004883",
+              "on-surface": "#201b12",
+              "tertiary": "#1d5fa2",
+              "surface-container-high": "#f2e6d8",
+              "outline": "#8a716d",
+              "error-container": "#ffdad6",
+              "surface-container-highest": "#ede1d2",
+              "on-tertiary-container": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "on-surface-variant": "#57423e",
+              "error": "#ba1a1a",
+              "surface-dim": "#e4d8ca",
+              "on-secondary-fixed-variant": "#7c2d1e"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Work Sans"],
+              "devanagari": ["Noto Sans Devanagari"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        -webkit-tap-highlight-color: transparent;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-container/30">
+<!-- TopAppBar -->
+<header class="bg-[#fff8f3] dark:bg-stone-950 docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center px-6 h-16 w-full max-w-screen-xl mx-auto">
+<button class="text-[#a3392c] dark:text-[#c45142] hover:bg-[#fef2e3] dark:hover:bg-stone-800 transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-['Noto_Sans_Devanagari'] leading-[1.6] tracking-wide text-xl font-bold text-[#a3392c] dark:text-[#c45142]">
+                पंडित गोविंद मकरंद दुबे
+            </h1>
+<button class="text-[#a3392c] dark:text-[#c45142] hover:bg-[#fef2e3] dark:hover:bg-stone-800 transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<main class="pb-32">
+<!-- Main Featured Video Section -->
+<section class="px-6 py-4">
+<div class="mb-4">
+<h2 class="font-devanagari text-2xl font-bold text-primary tracking-tight">नवीनतम प्रवचन</h2>
+<p class="font-devanagari text-on-surface-variant text-sm mt-1">आज का आध्यात्मिक संदेश</p>
+</div>
+<!-- Video Player Card -->
+<div class="relative aspect-video rounded-3xl overflow-hidden bg-surface-container-highest shadow-xl group">
+<img alt="Featured Video" class="w-full h-full object-cover" data-alt="A spiritual leader giving a scholarly discourse in a temple setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDk8d1RNyeicjKW3G73iTz52uJBSM59X5s2icVdXEt_Ab8kInnWBROIPN25mhpAlL0SxZQneiZl_8Ycar_1Sq8Nfv7pix8huIkXjG0nH7wwoJJBUWidz7aNA3ilm8wR6Hxud1v1rdE3DPTMrD2yFn-BvT57cyF7DxV2GG_yCmPnkXwvaOH3NleFZCE0M_RCMP7Sac4uJ-wepX-uTOwEixiTlC3VYa3gJuzNtA1lPYuCJi7k-TnpEQPe3h2iEEug5TaTPDvAloXsePE"/>
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+<button class="w-16 h-16 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-lg active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-4xl" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+<p class="text-white/80 font-label text-xs uppercase tracking-widest mb-1">श्रीमद्भागवत कथा</p>
+<h3 class="text-white font-devanagari text-xl font-semibold leading-tight">भक्ति योग का सरल मार्ग और उसका महत्व</h3>
+</div>
+</div>
+</section>
+<!-- Category Filter Chips -->
+<section class="px-6 py-4 overflow-x-auto flex gap-3 no-scrollbar">
+<button class="px-5 py-2 rounded-full bg-primary text-on-primary font-devanagari text-sm whitespace-nowrap">सभी</button>
+<button class="px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-devanagari text-sm whitespace-nowrap hover:bg-surface-container-highest transition-colors">श्रीमद्भागवत</button>
+<button class="px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-devanagari text-sm whitespace-nowrap hover:bg-surface-container-highest transition-colors">रामायण</button>
+<button class="px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-devanagari text-sm whitespace-nowrap hover:bg-surface-container-highest transition-colors">वेदांत</button>
+<button class="px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-devanagari text-sm whitespace-nowrap hover:bg-surface-container-highest transition-colors">भजन</button>
+</section>
+<!-- Video Grid (Bento Style) -->
+<section class="px-6 py-2">
+<h3 class="font-devanagari text-lg font-bold text-on-surface mb-6 flex items-center gap-2">
+<span class="w-1 h-6 bg-secondary rounded-full"></span>
+                लोकप्रिय प्रवचन माला
+            </h3>
+<div class="grid grid-cols-1 gap-6">
+<!-- Video Item 1 -->
+<div class="flex flex-col gap-3 group">
+<div class="relative aspect-[16/9] rounded-2xl overflow-hidden bg-surface-container shadow-sm">
+<img alt="Thumbnail 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Traditional sacred books and oil lamps on a wooden table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDq4lz8Zh1KIADwFkybz7diJeEqWRON_lKrd1_aAY0Bwfe35sQdVq1GzRS8ITkHvpKZxTY6RvwUFcwa2S_nySTvhSG0Bx7xQqTmDncblSCZqnRMKxuvcLpQU7_mtUrILoaNDd9eSkKt9jIi5XMhQuUWvp53uEeNsppgD2Fm-H3IsSDodvO-EeIqz3i6oaPE0qqUfVEMZc3ScfKk0SuP842nBx26IL6hXO5617QT2fZT345bs765nOhP3mNlJb5tjd6rtYqQFlhBcTg"/>
+<div class="absolute bottom-2 right-2 px-2 py-0.5 bg-black/70 text-white text-[10px] rounded font-label">12:45</div>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl" data-icon="play_circle" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+</div>
+<div class="px-1">
+<h4 class="font-devanagari font-bold text-on-surface leading-snug">जीवन दर्शन: सुख और दुख का संतुलन कैसे बनाएं?</h4>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-[10px] text-on-surface-variant font-label px-1.5 py-0.5 rounded bg-surface-container-highest uppercase">उपनिषद</span>
+<span class="text-xs text-on-surface-variant font-label">• 2 दिन पहले</span>
+</div>
+</div>
+</div>
+<!-- Video Item 2 (Asymmetric Grid Layout simulation) -->
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-2 group">
+<div class="relative aspect-square rounded-2xl overflow-hidden bg-surface-container shadow-sm">
+<img alt="Thumbnail 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up of incense sticks and floral offerings in morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGUiLWrEWs4dkEzHOdTIYmRMiqcTaZGGN3EyQLiv88D5q2TsPj5K83dJkk9PvC49B8JCZi51zYFRU96EVFnxIaR49gYxyoE0GrOVgZcdz5caIoyjDjvGR3wgMxarWVZtmaxGw_B_VMb4O8DwmK2u9Pk7SjF2UMJTmZyJtxR3kRojf_54aSQoW2UEU2flJO8ZmpQrAbqRsY3uZwm2vQxsMis7L36f2Y77olehV_7-5QlcAulQunqDKIs-Hg8NKzd1eaZO2e6yWAg1I"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-3xl" data-icon="play_circle" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+</div>
+<h4 class="font-devanagari font-medium text-sm text-on-surface px-1 leading-tight">प्रातः वंदना और उसका फल</h4>
+</div>
+<div class="flex flex-col gap-2 group">
+<div class="relative aspect-square rounded-2xl overflow-hidden bg-surface-container shadow-sm">
+<img alt="Thumbnail 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Hands holding a sacred rosary against a blurry spiritual background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcE2NqOoFwziVi8jdsYlSBzUorgrmP1Am7Br0krKDV2JTOYRyxkh56HFWwMOaVMWT6nIvuJEWlZEQns3yxzBuqpxUEhs_v1sCy1beggKwl-8os35m3WDOY3iEgm58y8jUWu3YSyD__R9r_6OWoiP5AmM6zHRxhcZmPQGzA8RqQBBFUOQfPV0C5sZ5rg7RlTRvuKyVVRpTvXEr2-LKm1-oMBJHKfEY1cRDfy--kLYRZx4cFNpRWigJUs9nwu9WctdunkRRqAvcyO_M"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-3xl" data-icon="play_circle" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+</div>
+<h4 class="font-devanagari font-medium text-sm text-on-surface px-1 leading-tight">मंत्र जाप की सही विधि</h4>
+</div>
+</div>
+<!-- Video Item 3 -->
+<div class="flex flex-col gap-3 group">
+<div class="relative aspect-[16/9] rounded-2xl overflow-hidden bg-surface-container shadow-sm">
+<img alt="Thumbnail 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Golden sunrise over a peaceful river with silhouettes of temple architecture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhPDzPFDi4eoDFpRgpQtVGrYIVO-ItBrDreKEZwSpHxcXqCiGmulJ-YkTXRM7dfLvyW2U095Wv2bkkksLBvVU8-cyolLSQZODSeUUtDj5vjomEJpN-PiLrilSFTpHTmIknpDl5-ytXoOytytVt_yWdfM0i6NXtTIefrCbHs_CE2M2CoWPz4jjirxQJvKmF9iD81kN5TfSSAKujScEAAxrwiSb_rihW-aagHzPMWcSccVMpHoNQY82iwBqIZLjfZsazmrc7-KfSX8c"/>
+<div class="absolute bottom-2 right-2 px-2 py-0.5 bg-black/70 text-white text-[10px] rounded font-label">45:20</div>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl" data-icon="play_circle" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+</div>
+<div class="px-1">
+<h4 class="font-devanagari font-bold text-on-surface leading-snug">रामायण सार: हनुमान जी की अटूट भक्ति</h4>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-[10px] text-on-surface-variant font-label px-1.5 py-0.5 rounded bg-surface-container-highest uppercase">रामचरितमानस</span>
+<span class="text-xs text-on-surface-variant font-label">• 1 सप्ताह पहले</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="px-6 py-8">
+<div class="bg-secondary-container rounded-3xl p-6 flex items-center justify-between">
+<div class="max-w-[70%]">
+<h4 class="font-devanagari font-bold text-on-secondary-container text-lg">प्रवचन सूचना प्राप्त करें</h4>
+<p class="font-devanagari text-on-secondary-container/80 text-xs mt-1">नए वीडियो अपलोड होने पर तुरंत अपडेट पाएं</p>
+</div>
+<button class="bg-on-secondary-container text-secondary-container w-12 h-12 rounded-full flex items-center justify-center shadow-md active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-20 flex justify-around items-center px-4 pb-safe bg-[#fff8f3]/85 dark:bg-stone-950/85 backdrop-blur-md z-50 rounded-t-2xl border-t border-[#201b12]/15 dark:border-stone-800 shadow-[0_-4px_24px_rgba(32,27,18,0.06)]">
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-4 py-1 hover:text-[#a3392c] dark:hover:text-[#c45142] active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Noto_Sans_Devanagari'] text-xs font-medium">मुख्य</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-4 py-1 hover:text-[#a3392c] dark:hover:text-[#c45142] active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-['Noto_Sans_Devanagari'] text-xs font-medium">पुस्तकालय</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#fef2e3] dark:bg-[#a3392c]/20 text-[#a3392c] dark:text-[#fef2e3] rounded-xl px-4 py-1 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="play_circle" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+<span class="font-['Noto_Sans_Devanagari'] text-xs font-medium">प्रवचन</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-4 py-1 hover:text-[#a3392c] dark:hover:text-[#c45142] active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Noto_Sans_Devanagari'] text-xs font-medium">प्रोफ़ाइल</span>
+</a>
+</nav>
+<!-- Floating Action Button (FAB) - For Search/Filters -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center active:scale-90 transition-transform z-40">
+<span class="material-symbols-outlined text-2xl" data-icon="search">search</span>
+</button>
+</body></html>
