@@ -23,7 +23,7 @@ const container = document.querySelector('.pdf-reader-container');
 let pdfDoc = null;
 let currentPage = 1;
 let scale = 1.2;
-let fitWidth = false;
+let fitWidth = window.innerWidth < 768;
 
 function showLoader(show, message) {
     if (!loader) return;
@@ -151,6 +151,41 @@ document.addEventListener('fullscreenchange', () => {
 window.addEventListener('resize', () => {
     if (fitWidth) renderPage(currentPage);
 });
+
+// ========================================
+// Touch swipe for page navigation (mobile)
+// ========================================
+if (wrapper) {
+    let swipeStartX = 0;
+    let swipeStartY = 0;
+    let isSwiping = false;
+
+    wrapper.addEventListener('pointerdown', (e) => {
+        if (e.pointerType === 'mouse') return;
+        swipeStartX = e.clientX;
+        swipeStartY = e.clientY;
+        isSwiping = true;
+    }, { passive: true });
+
+    wrapper.addEventListener('pointerup', (e) => {
+        if (!isSwiping || e.pointerType === 'mouse') return;
+        isSwiping = false;
+        const dx = e.clientX - swipeStartX;
+        const dy = e.clientY - swipeStartY;
+        // Only trigger if horizontal swipe dominates vertical
+        if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+            if (dx < 0 && pdfDoc && currentPage < pdfDoc.numPages) {
+                renderPage(currentPage + 1);
+            } else if (dx > 0 && currentPage > 1) {
+                renderPage(currentPage - 1);
+            }
+        }
+    }, { passive: true });
+
+    wrapper.addEventListener('pointercancel', () => {
+        isSwiping = false;
+    }, { passive: true });
+}
 
 if (canvas && loader && pageInput && pageCountSpan && prevBtn && nextBtn && zoomInBtn && zoomOutBtn && fitWidthBtn) {
     loadPDF();

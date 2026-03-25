@@ -102,7 +102,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Mukta:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
@@ -161,6 +161,8 @@
                         alt="पं. गोविन्द मकरन्द दुबे"
                         class="author-photo"
                         fetchpriority="high"
+                        width="280"
+                        height="280"
                     >
                     <div class="portrait-decoration">
                         <span class="portrait-om">ॐ</span>
@@ -193,6 +195,8 @@
                         class="book-cover"
                         loading="eager"
                         fetchpriority="low"
+                        width="350"
+                        height="500"
                     >
                     <a class="book-overlay" href="geeta.html" aria-label="हिन्दी-गीता के बारे में जानें">
                         <span class="overlay-text">और जानें</span>
@@ -225,6 +229,8 @@
                         alt="श्रीमद्भागवत पुराण का हिन्दी अनुवाद - पुस्तक आवरण"
                         class="book-cover"
                         loading="lazy"
+                        width="350"
+                        height="500"
                     >
                     <a class="book-overlay" href="bhagwat.html" aria-label="हिन्दी भागवत के बारे में जानें">
                         <span class="overlay-text">और जानें</span>
@@ -257,6 +263,8 @@
                         alt="श्रीरामायण का हिन्दी अनुवाद - पुस्तक आवरण"
                         class="book-cover"
                         loading="lazy"
+                        width="350"
+                        height="500"
                     >
                     <a class="book-overlay" href="ramayana.html" aria-label="हिन्दी रामायण के बारे में जानें">
                         <span class="overlay-text">और जानें</span>
@@ -366,6 +374,8 @@
                         alt="पं. गोविन्द मकरन्द दुबे"
                         class="about-author-photo"
                         loading="lazy"
+                        width="280"
+                        height="280"
                     >
                 </div>
                 <div class="about-text scroll-reveal">
@@ -490,5 +500,25 @@
     <script src="translations.js"></script>
     <script src="verses.js"></script>
     <script src="script.js"></script>
+
+    <!-- Bottom Navigation (Mobile) -->
+    <nav class="bottom-nav" aria-label="मुख्य नेविगेशन">
+        <a href="index.html" class="bottom-nav-item active">
+            <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <span>मुखपृष्ठ</span>
+        </a>
+        <a href="geeta.html" class="bottom-nav-item">
+            <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+            <span>ग्रन्थ</span>
+        </a>
+        <a href="about.html" class="bottom-nav-item">
+            <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span>अनुवादक</span>
+        </a>
+        <a href="contact.html" class="bottom-nav-item">
+            <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+            <span>सम्पर्क</span>
+        </a>
+    </nav>
 </body>
 </html>
