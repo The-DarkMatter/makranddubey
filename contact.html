@@ -57,7 +57,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Mukta:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="styles.css">
     
@@ -472,256 +472,24 @@
         document.head.appendChild(style);
     </script>
     
-    <style>
-        /* Contact Page Specific Styles */
-        .contact-hero {
-            background: linear-gradient(135deg, var(--color-saffron) 0%, var(--color-deep-red) 100%);
-            padding: var(--spacing-2xl) var(--spacing-md);
-            text-align: center;
-            color: var(--color-white);
-        }
-        
-        .contact-hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .page-title {
-            font-family: var(--font-hindi);
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: var(--spacing-sm);
-        }
-        
-        .page-subtitle {
-            font-size: 1.25rem;
-            opacity: 0.95;
-        }
-        
-        .contact-content-section {
-            padding: var(--spacing-2xl) var(--spacing-md);
-            background: var(--color-soft-yellow);
-        }
-        
-        .contact-wrapper {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            gap: var(--spacing-xl);
-        }
-        
-        .contact-form-container, .contact-info-container {
-            background: var(--color-white);
-            padding: var(--spacing-xl);
-            border-radius: var(--radius-xl);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .form-title, .info-title {
-            font-family: var(--font-hindi);
-            font-size: 2rem;
-            color: var(--color-deep-red);
-            margin-bottom: var(--spacing-md);
-        }
-        
-        .form-description {
-            margin-bottom: var(--spacing-lg);
-            line-height: 1.8;
-        }
-        
-        .form-group {
-            margin-bottom: var(--spacing-md);
-        }
-        
-        .form-label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: var(--spacing-xs);
-            color: var(--color-dark-brown);
-        }
-        
-        .required {
-            color: var(--color-deep-red);
-        }
-        
-        .form-input {
-            width: 100%;
-            padding: var(--spacing-sm);
-            border: 2px solid rgba(255, 153, 51, 0.3);
-            border-radius: var(--radius-md);
-            font-family: inherit;
-            font-size: 1rem;
-            transition: border-color var(--transition-fast);
-        }
-        
-        .form-input:focus {
-            outline: none;
-            border-color: var(--color-saffron);
-            box-shadow: 0 0 0 3px rgba(255, 153, 51, 0.1);
-        }
-        
-        .form-textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-        
-        .btn-submit {
-            width: 100%;
-            padding: var(--spacing-md);
-            font-size: 1.1rem;
-        }
-        
-        .form-note {
-            margin-top: var(--spacing-md);
-            font-size: 0.9rem;
-            color: rgba(74, 44, 42, 0.7);
-            font-style: italic;
-        }
-        
-        .info-card {
-            background: var(--color-soft-yellow);
-            padding: var(--spacing-md);
-            border-radius: var(--radius-lg);
-            display: flex;
-            gap: var(--spacing-md);
-            margin-bottom: var(--spacing-lg);
-        }
-        
-        .info-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--gradient-warm);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-        
-        .info-icon .om-symbol {
-            font-size: 2rem;
-            color: var(--color-white);
-        }
-        
-        .info-content h3 {
-            font-size: 1.5rem;
-            color: var(--color-deep-red);
-            margin-bottom: var(--spacing-xs);
-        }
-        
-        .info-text {
-            line-height: 1.8;
-        }
-        
-        .info-section {
-            margin-bottom: var(--spacing-lg);
-        }
-        
-        .info-section-title {
-            font-family: var(--font-hindi);
-            font-size: 1.3rem;
-            color: var(--color-deep-red);
-            margin-bottom: var(--spacing-sm);
-            padding-bottom: var(--spacing-xs);
-            border-bottom: 2px solid var(--color-gold);
-        }
-        
-        .resource-list {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-sm);
-        }
-        
-        .resource-link {
-            display: flex;
-            align-items: start;
-            gap: var(--spacing-sm);
-            padding: var(--spacing-sm);
-            background: var(--color-soft-yellow);
-            border-radius: var(--radius-md);
-            transition: all var(--transition-fast);
-        }
-        
-        .resource-link:hover {
-            transform: translateX(4px);
-            background: var(--color-saffron);
-            color: var(--color-white);
-        }
-        
-        .resource-link span {
-            font-size: 1.5rem;
-        }
-        
-        .resource-link strong {
-            display: block;
-            margin-bottom: var(--spacing-xs);
-        }
-        
-        .resource-link p {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-        
-        .faq-list {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-md);
-        }
-        
-        .faq-item {
-            padding: var(--spacing-sm);
-            background: var(--color-soft-yellow);
-            border-radius: var(--radius-md);
-            border-left: 3px solid var(--color-saffron);
-        }
-        
-        .faq-item strong {
-            display: block;
-            color: var(--color-deep-red);
-            margin-bottom: var(--spacing-xs);
-        }
-        
-        .faq-item p {
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-        
-        .devotional-message {
-            background: linear-gradient(135deg, var(--color-soft-yellow) 0%, var(--color-white) 100%);
-            padding: var(--spacing-lg);
-            border-radius: var(--radius-lg);
-            text-align: center;
-            margin-top: var(--spacing-lg);
-        }
-        
-        .devotional-text {
-            font-family: var(--font-hindi);
-            font-size: 1.1rem;
-            line-height: 2;
-            font-style: italic;
-            margin: var(--spacing-md) 0;
-        }
-        
-        .devotional-author {
-            font-weight: 600;
-            color: var(--color-deep-red);
-        }
-        
-        @media (max-width: 968px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .page-title {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    <!-- Bottom Navigation (Mobile) -->
+    <nav class="bottom-nav" aria-label="मुख्य नेविगेशन">
+        <a href="index.html" class="bottom-nav-item">
+            <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <span>मुखपृष्ठ</span>
+        </a>
+        <a href="geeta.html" class="bottom-nav-item">
+            <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+            <span>ग्रन्थ</span>
+        </a>
+        <a href="about.html" class="bottom-nav-item">
+            <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span>अनुवादक</span>
+        </a>
+        <a href="contact.html" class="bottom-nav-item active">
+            <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+            <span>सम्पर्क</span>
+        </a>
+    </nav>
 </body>
 </html>
